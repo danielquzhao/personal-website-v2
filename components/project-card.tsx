@@ -26,7 +26,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             {project.title}
           </h3>
           {project.metrics && (
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm font-medium">
               {project.metrics}
             </p>
           )}
