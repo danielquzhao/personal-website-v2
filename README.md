@@ -1,6 +1,6 @@
 # Personal Website - v2
 
-My personal portfolio. Built with [Next.js](https://nextjs.org) and [shadcn/ui](https://ui.shadcn.com).
+My personal portfolio. Built with [Next.js](https://nextjs.org) and [Tailwind CSS](https://tailwindcss.com/). Visit at [danielquzhao.com](https://www.danielquzhao.com/).
 
 ## Getting Started
 
