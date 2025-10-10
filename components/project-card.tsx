@@ -25,11 +25,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <h3 className="text-lg font-semibold group-hover:text-primary transition-colors">
             {project.title}
           </h3>
-          {project.metrics && (
-            <p className="text-sm font-medium">
-              {project.metrics}
-            </p>
-          )}
           <p className="text-sm text-muted-foreground">
             {project.description}
           </p>
