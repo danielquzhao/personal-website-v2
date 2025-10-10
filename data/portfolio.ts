@@ -5,19 +5,22 @@ export const experiences: Experience[] = [
     company: "Cineplex",
     role: "Software Developer",
     icon: "/logos/cineplex.png",
-    color: "#004ccd", 
+    color: "#004ccd",
+    link: "https://www.cdmexperiences.com/",
   },
   {
     company: "Waterloo Aerial Robotics Group",
     role: "Software Developer",
     icon: "/logos/warg.png",
-    color: "#D1D5DB", 
+    color: "#E5E7EB",
+    link: "https://www.uwarg.com/",
   },
   {
     company: "Waterloo Reality Labs",
     role: "Software Developer",
     icon: "/logos/wrl.png",
-    color: "#F5F2E8", 
+    color: "#F5F2E8",
+    link: "https://uwrealitylabs.com/",
   },
 ];
 

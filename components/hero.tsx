@@ -14,11 +14,9 @@ export function Hero() {
       </p>
 
       <div className="space-y-3 mb-8">
-        {experiences.map((exp, index) => (
-          <div
-            key={index}
-            className="flex items-center gap-3 group cursor-pointer"
-          >
+        {experiences.map((exp, index) => {
+          const content = (
+            <>
             <div
               className="w-12 h-12 rounded-md flex items-center justify-center overflow-hidden transition-all duration-200 group-hover:brightness-110"
               style={{
@@ -39,12 +37,29 @@ export function Hero() {
                 </span>
               )}
             </div>
-            <div>
-              <h3 className="font-semibold">{exp.company}</h3>
-              <p className="text-sm text-muted-foreground">{exp.role}</p>
+              <div>
+                <h3 className="font-semibold">{exp.company}</h3>
+                <p className="text-sm text-muted-foreground">{exp.role}</p>
+              </div>
+            </>
+          );
+
+          return exp.link ? (
+            <a
+              key={index}
+              href={exp.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 group cursor-pointer"
+            >
+              {content}
+            </a>
+          ) : (
+            <div key={index} className="flex items-center gap-3">
+              {content}
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       <a
