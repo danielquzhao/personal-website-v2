@@ -16,7 +16,7 @@ export function Hero() {
         {experiences.map((exp, index) => (
           <div
             key={index}
-            className="flex items-center gap-3 p-4 rounded-lg bg-card/50 hover:bg-card transition-colors border border-border/50"
+            className="flex items-center gap-3"
           >
             <div className="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center">
               <span className="text-2xl font-bold text-primary">
