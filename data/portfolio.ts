@@ -8,16 +8,16 @@ export const experiences: Experience[] = [
     color: "#004ccd", 
   },
   {
-    company: "Startup Inc",
-    role: "Full Stack Developer",
-    icon: "/logos/startup-inc.png",
-    color: "#5B21B6", 
+    company: "Waterloo Aerial Robotics Group",
+    role: "Software Developer",
+    icon: "/logos/warg.png",
+    color: "#D1D5DB", 
   },
   {
-    company: "Innovation Labs",
-    role: "Frontend Engineer",
-    icon: "/logos/innovation-labs.png",
-    color: "#8B5A3C", 
+    company: "Waterloo Reality Labs",
+    role: "Software Developer",
+    icon: "/logos/wrl.png",
+    color: "#F5F2E8", 
   },
 ];
 
