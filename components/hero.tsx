@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="mb-16">
+    <section className="mb-8">
       <h1 className="text-5xl md:text-6xl font-bold mb-4">Daniel Zhao</h1>
       <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl">
         Software engineer and designer passionate about building innovative

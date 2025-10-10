@@ -14,8 +14,8 @@ export function Footer() {
   ];
 
   return (
-    <footer className="mt-20 border-t border-border/50 pt-8">
-      <div className="flex items-center justify-center gap-4">
+    <footer className="mt-12">
+      <div className="flex items-center gap-4">
         {socialLinks.map((link) => (
           <Button
             key={link.label}
