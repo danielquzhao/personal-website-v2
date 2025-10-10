@@ -1,6 +1,7 @@
 import { experiences } from "@/data/portfolio";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export function Hero() {
   return (
@@ -16,12 +17,27 @@ export function Hero() {
         {experiences.map((exp, index) => (
           <div
             key={index}
-            className="flex items-center gap-3"
+            className="flex items-center gap-3 group cursor-pointer"
           >
-            <div className="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center">
-              <span className="text-2xl font-bold text-primary">
-                {exp.company.charAt(0)}
-              </span>
+            <div
+              className="w-12 h-12 rounded-md flex items-center justify-center overflow-hidden transition-all duration-200 group-hover:brightness-110"
+              style={{
+                backgroundColor: exp.color || "rgba(255, 255, 255, 0.05)",
+              }}
+            >
+              {exp.icon ? (
+                <Image
+                  src={exp.icon}
+                  alt={`${exp.company} logo`}
+                  width={48}
+                  height={48}
+                  className="object-contain w-8 h-8"
+                />
+              ) : (
+                <span className="text-2xl font-bold text-white">
+                  {exp.company.charAt(0)}
+                </span>
+              )}
             </div>
             <div>
               <h3 className="font-semibold">{exp.company}</h3>

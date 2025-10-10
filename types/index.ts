@@ -2,6 +2,7 @@ export interface Experience {
   company: string;
   role: string;
   icon?: string;
+  color?: string;
 }
 
 export interface Project {

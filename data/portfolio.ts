@@ -2,16 +2,22 @@ import { Experience, Project } from "@/types";
 
 export const experiences: Experience[] = [
   {
-    company: "Tech Company",
-    role: "Software Engineer",
+    company: "Cineplex",
+    role: "Software Developer",
+    icon: "/logos/cineplex.png",
+    color: "#004ccd", 
   },
   {
     company: "Startup Inc",
     role: "Full Stack Developer",
+    icon: "/logos/startup-inc.png",
+    color: "#5B21B6", 
   },
   {
     company: "Innovation Labs",
     role: "Frontend Engineer",
+    icon: "/logos/innovation-labs.png",
+    color: "#8B5A3C", 
   },
 ];
 
