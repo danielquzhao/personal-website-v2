@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <div className="max-w-[1800px] mx-auto px-6 py-12 lg:px-12 lg:py-20">
-        <div className="lg:grid lg:grid-cols-[500px_1fr] lg:gap-12 xl:gap-20">
+        <div className="lg:grid lg:grid-cols-[1fr_2fr] lg:gap-12 xl:gap-20">
           {/* Left side - Hero */}
           <div className="lg:sticky lg:top-20 lg:self-start">
             <Hero />
