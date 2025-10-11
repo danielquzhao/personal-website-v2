@@ -27,9 +27,9 @@ export const experiences: Experience[] = [
 export const projects: Project[] = [
   {
     id: "project-1",
-    title: "AI-Powered Dashboard",
+    title: "Terra",
     description: "Real-time analytics platform",
-    image: "/projects/project1.jpg",
+    image: "/projects/terra.png",
     date: "October 2024",
     technologies: ["Next.js", "TypeScript", "Python", "TensorFlow"],
     links: {
@@ -42,9 +42,9 @@ export const projects: Project[] = [
   },
   {
     id: "project-2",
-    title: "Mobile Fitness App",
+    title: "ChordCraft",
     description: "Track your workouts and progress",
-    image: "/projects/project2.jpg",
+    image: "/projects/chordcraft.png",
     date: "August 2024",
     technologies: ["React Native", "Node.js", "MongoDB"],
     links: {
@@ -56,9 +56,9 @@ export const projects: Project[] = [
   },
   {
     id: "project-3",
-    title: "E-commerce Platform",
+    title: "TrashMap",
     description: "Modern online shopping experience",
-    image: "/projects/project3.jpg",
+    image: "/projects/trashmap.png",
     date: "June 2024",
     technologies: ["Next.js", "Stripe", "PostgreSQL"],
     links: {
@@ -66,43 +66,6 @@ export const projects: Project[] = [
     },
     overview:
       "A full-featured e-commerce platform with seamless checkout experience and inventory management.",
-  },
-  {
-    id: "project-4",
-    title: "Design System",
-    description: "Component library for rapid development",
-    image: "/projects/project4.jpg",
-    date: "April 2024",
-    technologies: ["React", "Storybook", "Tailwind CSS"],
-    links: {
-      github: "https://github.com/danielquzhao",
-    },
-    overview:
-      "A comprehensive design system and component library used across multiple products.",
-  },
-  {
-    id: "project-5",
-    title: "Social Media Analytics",
-    description: "Track engagement and growth",
-    image: "/projects/project5.jpg",
-    date: "March 2024",
-    technologies: ["Vue.js", "GraphQL", "Redis"],
-    overview:
-      "Analytics tool for social media managers to track performance across multiple platforms.",
-  },
-  {
-    id: "project-6",
-    title: "Developer Tools",
-    description: "CLI for productivity enhancement",
-    image: "/projects/project6.jpg",
-    date: "January 2024",
-    technologies: ["Go", "Docker", "Kubernetes"],
-    links: {
-      github: "https://github.com/danielquzhao",
-    },
-    metrics: "500+ GitHub stars",
-    overview:
-      "A suite of command-line tools designed to improve developer productivity and streamline workflows.",
   },
 ];
 
