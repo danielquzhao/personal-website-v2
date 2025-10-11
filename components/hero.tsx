@@ -7,9 +7,14 @@ export function Hero() {
   return (
     <section className="mb-8">
       <h1 className="text-4xl md:text-5xl font-bold mb-4">Daniel Zhao</h1>
-      <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl">
-        Computer Science student at the University of Waterloo.
-      </p>
+      <div className="text-base text-muted-foreground mb-8 max-w-2xl">
+        <p className="mb-4">
+          I study Computer Science at the University of Waterloo. Currently, I am a software developer at Cineplex Digital Media.
+        </p>
+        <p>
+          I am passionate about interactive systems, human-centered design, and technology that brings experiences to life. In my free time, I enjoy eating, climbing, and creating music.
+        </p>
+      </div>
 
       <div className="space-y-3 mb-8">
         {experiences.map((exp, index) => {
