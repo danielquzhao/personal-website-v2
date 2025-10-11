@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Daniel Zhao - Software Engineer",
-  description: "Personal portfolio of Daniel Zhao - Software Engineer and Designer",
+  title: "Daniel Zhao",
+  description: "Personal Portfolio",
 };
 
 export default function RootLayout({
