@@ -9,7 +9,7 @@ export default function Home() {
       <div className="max-w-[1800px] mx-auto px-6 py-12 lg:px-12 lg:py-20">
         <div className="lg:grid lg:grid-cols-[1fr_2fr] lg:gap-12 xl:gap-20">
           {/* Left side - Hero */}
-          <div className="lg:sticky lg:top-20 lg:self-start">
+          <div className="lg:sticky lg:top-20 lg:self-start lg:h-[calc(100vh-10rem)] lg:flex lg:flex-col lg:justify-between">
             <Hero />
             <Footer />
           </div>
