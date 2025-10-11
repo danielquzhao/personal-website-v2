@@ -64,7 +64,7 @@ export function Hero() {
         href="/resume.pdf"
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 text-sm font-medium hover:gap-3 transition-all"
+        className="inline-flex items-center gap-2 text-base font-medium hover:gap-3 transition-all"
       >
         Click here for resume
         <ArrowRight className="w-4 h-4" />
