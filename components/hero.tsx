@@ -12,7 +12,7 @@ export function Hero() {
           I study Computer Science at the University of Waterloo. Currently, I am a software developer at Cineplex Digital Media.
         </p>
         <p>
-          I am passionate about interactive systems, human-centered design, and technology that brings experiences to life. In my free time, I enjoy eating, climbing, and creating music.
+          I am passionate about interactive systems, human-centered design, and technology that brings experiences to life. In my free time, I enjoy running, climbing, and creating music.
         </p>
       </div>
 
