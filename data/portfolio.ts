@@ -67,5 +67,48 @@ export const projects: Project[] = [
     overview:
       "A full-featured e-commerce platform with seamless checkout experience and inventory management.",
   },
+  {
+    id: "project-4",
+    title: "FridgeMate",
+    description: "Smart refrigerator management system",
+    image: "/projects/fridgemate.png",
+    date: "December 2024",
+    technologies: ["React Native", "Node.js", "MongoDB", "TensorFlow"],
+    links: {
+      website: "https://fridgemate.app",
+      github: "https://github.com/danielquzhao/fridge-mate",
+    },
+    metrics: "5,000+ active users",
+    overview:
+      "A mobile application that helps users track their refrigerator contents, manage grocery lists, and reduce food waste through AI-powered expiration tracking and recipe suggestions.",
+  },
+  {
+    id: "project-5",
+    title: "A2D Attention Tracking",
+    description: "LIDAR-based attention analysis system",
+    image: "/projects/a2d-tracking.png",
+    date: "November 2024",
+    technologies: ["Python", "C++", "OpenCV", "PCL"],
+    links: {
+      github: "https://github.com/danielquzhao/a2d-attention-tracking",
+    },
+    overview:
+      "A computer vision system that uses LIDAR sensors to track user attention in retail environments, enabling retailers to understand customer behavior patterns and optimize store layouts.",
+  },
+  {
+    id: "project-6",
+    title: "LeetType",
+    description: "Gamified typing practice with coding challenges",
+    image: "/projects/leettype.png",
+    date: "October 2024",
+    technologies: ["TypeScript", "React", "Node.js", "Express"],
+    links: {
+      website: "https://leettype.dev",
+      github: "https://github.com/danielquzhao/leettype",
+    },
+    metrics: "2,000+ daily active users",
+    overview:
+      "A web application that combines typing practice with coding challenges, improving both typing speed and programming familiarity through gamified learning experiences.",
+  },
 ];
 
