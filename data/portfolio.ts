@@ -27,9 +27,9 @@ export const experiences: Experience[] = [
 export const projects: Project[] = [
   {
     id: "project-1",
-    title: "Media Engine Analyzer",
+    title: "Media Analysis Engine",
     description: "Automated media analysis tool",
-    image: "/projects/media-engine.png",
+    image: "/projects/mediaanalysisengine.png",
     date: "December 2024",
     technologies: ["Python", "C++", "FFmpeg"],
     links: {
@@ -42,7 +42,7 @@ export const projects: Project[] = [
     id: "project-2",
     title: "Sentinel",
     description: "Real-time security monitoring",
-    image: "/projects/sentinel.png",
+    image: "/projects/sentinel.jpeg",
     date: "November 2024",
     technologies: ["Go", "Kubernetes", "Prometheus"],
     links: {
