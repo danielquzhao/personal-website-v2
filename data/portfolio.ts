@@ -27,8 +27,61 @@ export const experiences: Experience[] = [
 export const projects: Project[] = [
   {
     id: "project-1",
+    title: "Media Engine Analyzer",
+    description: "Automated media analysis tool",
+    image: "/projects/media-engine.png",
+    date: "December 2024",
+    technologies: ["Python", "C++", "FFmpeg"],
+    links: {
+      github: "https://github.com/danielquzhao",
+    },
+    overview:
+      "A high-performance tool for analyzing media streams and files, providing detailed insights into encoding parameters and quality metrics.",
+  },
+  {
+    id: "project-2",
+    title: "Sentinel",
+    description: "Real-time security monitoring",
+    image: "/projects/sentinel.png",
+    date: "November 2024",
+    technologies: ["Go", "Kubernetes", "Prometheus"],
+    links: {
+      github: "https://github.com/danielquzhao",
+    },
+    overview:
+      "A distributed monitoring system designed for high-availability environments, providing real-time alerts and security analysis.",
+  },
+  {
+    id: "project-3",
+    title: "Notation",
+    description: "Interactive musical notation editor",
+    image: "/projects/notation.png",
+    date: "October 2024",
+    technologies: ["TypeScript", "React", "WebAudio API"],
+    links: {
+      github: "https://github.com/danielquzhao",
+    },
+    overview:
+      "A web-based musical notation editor that allows users to create, play back, and share sheet music in real-time.",
+  },
+  {
+    id: "project-4",
+    title: "ChordCraft",
+    description: "Intelligent musical companion",
+    image: "/projects/chordcraft.png",
+    date: "August 2024",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+    links: {
+      github: "https://github.com/danielquzhao",
+    },
+    metrics: "Featured on Product Hunt",
+    overview:
+      "An AI-powered music platform that helps musicians discover chords, practice scales, and compose music with ease.",
+  },
+  {
+    id: "project-5",
     title: "Terra",
-    description: "Real-time analytics platform",
+    description: "Real-time environmental analytics",
     image: "/projects/terra.png",
     date: "October 2024",
     technologies: ["Next.js", "TypeScript", "Python", "TensorFlow"],
@@ -38,77 +91,20 @@ export const projects: Project[] = [
     },
     metrics: "10,000+ active users",
     overview:
-      "A comprehensive analytics dashboard that leverages machine learning to provide real-time insights and predictions for business metrics.",
-  },
-  {
-    id: "project-2",
-    title: "ChordCraft",
-    description: "Track your workouts and progress",
-    image: "/projects/chordcraft.png",
-    date: "August 2024",
-    technologies: ["React Native", "Node.js", "MongoDB"],
-    links: {
-      github: "https://github.com/danielquzhao",
-    },
-    metrics: "Featured on App Store",
-    overview:
-      "A mobile application that helps users track their fitness journey with personalized workout plans and progress tracking.",
-  },
-  {
-    id: "project-3",
-    title: "TrashMap",
-    description: "Modern online shopping experience",
-    image: "/projects/trashmap.png",
-    date: "June 2024",
-    technologies: ["Next.js", "Stripe", "PostgreSQL"],
-    links: {
-      website: "https://example.com",
-    },
-    overview:
-      "A full-featured e-commerce platform with seamless checkout experience and inventory management.",
-  },
-  {
-    id: "project-4",
-    title: "FridgeMate",
-    description: "Smart refrigerator management system",
-    image: "/projects/fridgemate.png",
-    date: "December 2024",
-    technologies: ["React Native", "Node.js", "MongoDB", "TensorFlow"],
-    links: {
-      website: "https://fridgemate.app",
-      github: "https://github.com/danielquzhao/fridge-mate",
-    },
-    metrics: "5,000+ active users",
-    overview:
-      "A mobile application that helps users track their refrigerator contents, manage grocery lists, and reduce food waste through AI-powered expiration tracking and recipe suggestions.",
-  },
-  {
-    id: "project-5",
-    title: "A2D Attention Tracking",
-    description: "LIDAR-based attention analysis system",
-    image: "/projects/a2d-tracking.png",
-    date: "November 2024",
-    technologies: ["Python", "C++", "OpenCV", "PCL"],
-    links: {
-      github: "https://github.com/danielquzhao/a2d-attention-tracking",
-    },
-    overview:
-      "A computer vision system that uses LIDAR sensors to track user attention in retail environments, enabling retailers to understand customer behavior patterns and optimize store layouts.",
+      "A comprehensive analytics dashboard that leverages machine learning to provide real-time insights and predictions for environmental metrics.",
   },
   {
     id: "project-6",
-    title: "LeetType",
-    description: "Gamified typing practice with coding challenges",
-    image: "/projects/leettype.png",
-    date: "October 2024",
-    technologies: ["TypeScript", "React", "Node.js", "Express"],
+    title: "MotionWave",
+    description: "Dynamic gesture-based controller",
+    image: "/projects/motionwave.png",
+    date: "June 2024",
+    technologies: ["C++", "Python", "OpenCV"],
     links: {
-      website: "https://leettype.dev",
-      github: "https://github.com/danielquzhao/leettype",
+      github: "https://github.com/danielquzhao",
     },
-    metrics: "2,000+ daily active users",
     overview:
-      "A web application that combines typing practice with coding challenges, improving both typing speed and programming familiarity through gamified learning experiences.",
+      "A computer vision system that translates human gestures into control signals for digital interfaces and robotics.",
   },
 ];
 
