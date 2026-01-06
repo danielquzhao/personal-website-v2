@@ -145,7 +145,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
                           </div>
                         )}
                         <pre className="bg-muted p-6 rounded-lg overflow-x-auto">
-                          <code className={`language-${block.language}`}>
+                          <code className={`language - ${block.language} `}>
                             {block.code}
                           </code>
                         </pre>
