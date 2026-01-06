@@ -26,49 +26,52 @@ export function Footer() {
 
   return (
     <footer>
-      <div className="flex items-center gap-6">
-        {socialLinks.map((link) => (
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-6">
+          {socialLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={link.label}
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <link.icon className="w-6 h-6" />
+            </a>
+          ))}
+        </div>
+
+        {/* CS Webring Widget */}
+        <div className="flex items-center gap-6 mr-2">
           <a
-            key={link.label}
-            href={link.href}
+            href="https://cs.uwatering.com/#https://www.danielquzhao.com?nav=prev"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+            aria-label="Previous site in CS Webring"
+          >
+            ←
+          </a>
+          <a
+            href="https://cs.uwatering.com/#https://www.danielquzhao.com"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={link.label}
-            className="text-muted-foreground hover:text-foreground transition-colors"
+            aria-label="CS Webring"
+            className="text-muted-foreground hover:text-foreground transition-colors opacity-60 hover:opacity-100"
           >
-            <link.icon className="w-6 h-6" />
+            <img
+              src="https://cs.uwatering.com/icon.white.svg"
+              alt="CS Webring"
+              className="w-6 h-6"
+            />
           </a>
-        ))}
-        
-        {/* CS Webring Widget */}
-        <a 
-          href="https://cs.uwatering.com/#https://www.danielquzhao.com?nav=prev"
-          className="text-muted-foreground hover:text-foreground transition-colors"
-          aria-label="Previous site in CS Webring"
-        >
-          ←
-        </a>
-        <a 
-          href="https://cs.uwatering.com/#https://www.danielquzhao.com" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          aria-label="CS Webring"
-          className="text-muted-foreground hover:text-foreground transition-colors"
-        >
-          <img 
-            src="https://cs.uwatering.com/icon.white.svg" 
-            alt="CS Webring" 
-            className="w-6 h-6"
-            style={{ opacity: 0.8 }}
-          />
-        </a>
-        <a 
-          href="https://cs.uwatering.com/#https://www.danielquzhao.com?nav=next"
-          className="text-muted-foreground hover:text-foreground transition-colors"
-          aria-label="Next site in CS Webring"
-        >
-          →
-        </a>
+          <a
+            href="https://cs.uwatering.com/#https://www.danielquzhao.com?nav=next"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+            aria-label="Next site in CS Webring"
+          >
+            →
+          </a>
+        </div>
       </div>
     </footer>
   );
