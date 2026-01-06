@@ -74,6 +74,7 @@ export const projects: Project[] = [
         type: "image",
         url: "/projects/image-20251219-145902.png",
         alt: "Shot Detection Visualization",
+        width: "30%",
       },
       {
         type: "text",
@@ -88,6 +89,7 @@ export const projects: Project[] = [
         type: "image",
         url: "/projects/image-20251219-151839.png",
         alt: "Object Detection & Tracking",
+        width: "50%",
       },
       {
         type: "text",
@@ -103,11 +105,6 @@ export const projects: Project[] = [
         content: "I used Gemini to classify attributes like Camera Shot (Close up, Wide), Setting (Indoor, Office), and Ad Attributes. Low-level visual signals like color palette (K-Means), brightness, contrast, and motion energy were computed using OpenCV and Scikit-learn.",
       },
       {
-        type: "image",
-        url: "/projects/image-removebg-preview.png",
-        alt: "Visual Features Overview",
-      },
-      {
         type: "heading",
         level: 2,
         text: "Web Visualization Tool",
@@ -116,6 +113,7 @@ export const projects: Project[] = [
         type: "image",
         url: "/projects/image-20251219-152804.png",
         alt: "Web Visualizer UI",
+        width: "80%",
       },
       {
         type: "text",
@@ -125,6 +123,7 @@ export const projects: Project[] = [
         type: "image",
         url: "/projects/image-20251219-153139.png",
         alt: "Timeline Exploration",
+        width: "80%",
       },
       {
         type: "heading",
@@ -133,13 +132,17 @@ export const projects: Project[] = [
       },
       {
         type: "image",
-        url: "/projects/image.png",
+        url: "/projects/image-20251219-153626.png",
         alt: "CLI Tool Output",
+        width: "80%",
+      },
+      {
+        type: "text",
+        content: "The tool was built to be flexible for developers. The main entry point is src/pipeline.py, which uses argparse to handle configuration.",
       },
       {
         type: "code",
         language: "bash",
-        fileName: "Usage Examples",
         code: "python src/pipeline.py --input assets/video.mp4 --output output/report.json\n\npython src/pipeline.py \\\n  --input assets/video.mp4 \\\n  --prompt \"red car\" --prompt \"driver\" \\\n  --camera-shot-label \"drone shot\" \\\n  --setting-label \"highway\"",
       },
       {

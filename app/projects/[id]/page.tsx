@@ -44,12 +44,12 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
           </h1>
         </div>
 
-        <div className="relative overflow-hidden rounded-2xl mb-0 group shadow-sm border border-black/5 bg-muted/10 flex justify-center">
+        <div className="relative group flex justify-center m-0 overflow-hidden rounded-2xl border border-black/5 shadow-sm">
           {project.image ? (
             <img
               src={project.image}
               alt={project.title}
-              className="w-full h-auto max-h-[450px] object-contain transition-transform duration-500 group-hover:scale-105"
+              className="w-full h-auto max-h-[650px] object-contain transition-transform duration-500 group-hover:scale-105"
             />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/5 to-secondary/5">
@@ -131,12 +131,15 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
                     );
                   case "image":
                     return (
-                      <figure key={index} className="m-0">
-                        <div className="relative overflow-hidden rounded-2xl border border-black/5 shadow-sm bg-muted/10 flex justify-center">
+                      <figure key={index} className="m-0 flex flex-col items-center">
+                        <div
+                          className="relative flex justify-center overflow-hidden rounded-2xl border border-black/5 shadow-sm"
+                          style={block.width ? { maxWidth: block.width } : undefined}
+                        >
                           <img
                             src={block.url}
                             alt={block.alt || project.title}
-                            className="w-full h-auto max-h-[450px] object-contain block transition-transform duration-500 hover:scale-[1.02]"
+                            className="w-full h-auto max-h-[650px] object-contain block transition-transform duration-500 hover:scale-[1.02]"
                           />
                         </div>
                         {block.caption && (

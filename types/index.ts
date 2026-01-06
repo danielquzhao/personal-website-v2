@@ -8,7 +8,7 @@ export interface Experience {
 
 export type ContentBlock =
   | { type: 'text'; content: string }
-  | { type: 'image'; url: string; caption?: string; alt?: string }
+  | { type: 'image'; url: string; caption?: string; alt?: string; width?: string }
   | { type: 'heading'; level: 2 | 3 | 4; text: string }
   | { type: 'code'; code: string; language: string; fileName?: string }
   | { type: 'metrics'; items: { label: string; value: string; icon?: string }[] };
