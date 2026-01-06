@@ -21,20 +21,20 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
 
   return (
     <div className="min-h-screen">
-      <div className="max-w-5xl mx-auto px-6 py-12 md:px-12 md:py-20">
+      <div className="max-w-4xl mx-auto px-6 py-12 md:px-12 md:py-20">
         <Link href="/">
-          <Button variant="ghost" className="mb-8 -ml-4 hover:bg-muted/50 transition-colors">
+          <Button variant="ghost" className="mb-12 -ml-4 hover:bg-muted/50 transition-colors text-muted-foreground">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back
           </Button>
         </Link>
 
         <header className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-8 tracking-tight text-foreground">
+          <h1 className="text-3xl md:text-4xl font-bold mb-10 tracking-tight text-foreground">
             {project.title}
           </h1>
 
-          <div className="aspect-video relative bg-muted overflow-hidden rounded-xl mb-12 group shadow-sm border border-primary/5">
+          <div className="aspect-video relative bg-muted overflow-hidden rounded-2xl mb-16 group shadow-sm border border-black/5">
             {project.image ? (
               <img
                 src={project.image}
@@ -50,32 +50,32 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
             )}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-12 px-2 md:px-4 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-12 px-4 max-w-2xl mx-auto">
             {/* Date */}
-            <div className="flex items-start gap-4 text-left">
-              <div className="bg-muted px-3 py-2.5 rounded-lg border border-primary/5 shrink-0">
-                <Calendar className="w-5 h-5 text-muted-foreground" />
+            <div className="flex items-center gap-4 text-left">
+              <div className="bg-muted p-2.5 rounded-xl shrink-0">
+                <Calendar className="w-4 h-4 text-muted-foreground/70" />
               </div>
               <div>
-                <div className="text-xs font-semibold text-muted-foreground/60 uppercase tracking-widest mb-1">Date</div>
-                <div className="text-base font-medium text-foreground/90">{project.date}</div>
+                <div className="text-[10px] font-bold text-muted-foreground/50 uppercase tracking-[0.15em] mb-0.5">Date</div>
+                <div className="text-sm font-medium text-foreground/80">{project.date}</div>
               </div>
             </div>
 
             {/* Links */}
-            <div className="flex items-start gap-4 text-left">
-              <div className="bg-muted px-3 py-2.5 rounded-lg border border-primary/5 shrink-0">
-                <ExternalLink className="w-5 h-5 text-muted-foreground" />
+            <div className="flex items-center gap-4 text-left">
+              <div className="bg-muted p-2.5 rounded-xl shrink-0">
+                <ExternalLink className="w-4 h-4 text-muted-foreground/70" />
               </div>
               <div>
-                <div className="text-xs font-semibold text-muted-foreground/60 uppercase tracking-widest mb-1">Links</div>
+                <div className="text-[10px] font-bold text-muted-foreground/50 uppercase tracking-[0.15em] mb-0.5">Links</div>
                 <div className="flex flex-wrap gap-x-4">
                   {project.links?.website && (
                     <a
                       href={project.links.website}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-base font-medium text-foreground/90 hover:text-primary underline underline-offset-4 decoration-primary/30 transition-colors"
+                      className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors underline decoration-foreground/10 underline-offset-4"
                     >
                       Website
                     </a>
@@ -85,7 +85,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
                       href={project.links.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-base font-medium text-foreground/90 hover:text-primary underline underline-offset-4 decoration-primary/30 transition-colors"
+                      className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors underline decoration-foreground/10 underline-offset-4"
                     >
                       GitHub
                     </a>
@@ -95,26 +95,26 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
             </div>
 
             {/* technologies */}
-            <div className="flex items-start gap-4 text-left">
-              <div className="bg-muted px-3 py-2.5 rounded-lg border border-primary/5 shrink-0">
-                <Code className="w-5 h-5 text-muted-foreground" />
+            <div className="flex items-center gap-4 text-left">
+              <div className="bg-muted p-2.5 rounded-xl shrink-0">
+                <Code className="w-4 h-4 text-muted-foreground/70" />
               </div>
               <div>
-                <div className="text-xs font-semibold text-muted-foreground/60 uppercase tracking-widest mb-1">Technologies</div>
-                <div className="text-base font-medium text-foreground/90 leading-relaxed">
+                <div className="text-[10px] font-bold text-muted-foreground/50 uppercase tracking-[0.15em] mb-0.5">Technologies</div>
+                <div className="text-sm font-medium text-foreground/80 leading-relaxed">
                   {project.technologies.join(", ")}
                 </div>
               </div>
             </div>
 
             {/* description/metrics */}
-            <div className="flex items-start gap-4 text-left">
-              <div className="bg-muted px-3 py-2.5 rounded-lg border border-primary/5 shrink-0">
-                <User className="w-5 h-5 text-muted-foreground" />
+            <div className="flex items-center gap-4 text-left">
+              <div className="bg-muted p-2.5 rounded-xl shrink-0">
+                <User className="w-4 h-4 text-muted-foreground/70" />
               </div>
               <div>
-                <div className="text-xs font-semibold text-muted-foreground/60 uppercase tracking-widest mb-1">Status</div>
-                <div className="text-base font-medium text-foreground/90 leading-relaxed">
+                <div className="text-[10px] font-bold text-muted-foreground/50 uppercase tracking-[0.15em] mb-0.5">Status</div>
+                <div className="text-sm font-medium text-foreground/80 leading-relaxed line-clamp-1">
                   {project.metrics || project.description}
                 </div>
               </div>
