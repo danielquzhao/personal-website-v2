@@ -42,7 +42,7 @@ export const projects: Project[] = [
     id: "project-2",
     title: "Sentinel",
     description: "Real-time security monitoring",
-    image: "/projects/sentinel.jpeg",
+    image: "/projects/sentinel.png",
     date: "November 2024",
     technologies: ["Go", "Kubernetes", "Prometheus"],
     links: {
