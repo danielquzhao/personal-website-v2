@@ -30,7 +30,7 @@ export const projects: Project[] = [
     title: "A2D Media Analysis Engine",
     description: "AI-powered video and image analysis pipeline",
     image: "/projects/mediaanalysisengine.png",
-    date: "November 2025",
+    date: "December 2025",
     technologies: ["Python", "PyTorch", "Next.js", "Google Gemini API", "Segment Anything Model"],
     links: {
       github: "https://github.com/danielquzhao/a2d-media-analysis-engine",
@@ -45,7 +45,7 @@ export const projects: Project[] = [
       },
       {
         type: "text",
-        content: "We started with a simple but ambitious question: Can we automate our current media label tagging system? Manual tagging is slow and boring. We wanted to build a machine that could watch a video and tell us not just what is in it, but where it is, when scenes change, and how it looks.",
+        content: "During my internship at Cineplex Digital Media, we had a simple but ambitious question: Can we automate our current media label tagging system? Manual tagging is slow and boring. We wanted to build a machine that could watch a video and tell us not just what is in it, but where it is, when scenes change, and how it looks.",
       },
       {
         type: "text",
@@ -163,47 +163,122 @@ export const projects: Project[] = [
   {
     id: "sentinel",
     title: "Sentinel",
-    description: "Real-time security monitoring",
+    description: "Privacy-first multi-person tracking using LiDAR",
     image: "/projects/sentinel.png",
-    date: "November 2024",
-    technologies: ["Go", "Kubernetes", "Prometheus"],
+    date: "October 2025",
+    technologies: ["Python", "Scikit-learn", "Next.js", "Flask", "Socket.IO"],
     links: {
-      github: "https://github.com/danielquzhao",
+      github: "https://github.com/danielquzhao/sentinel",
     },
     overview:
-      "A distributed monitoring system designed for high-availability environments, providing real-time alerts and security analysis.",
+      "Sentinel is a real-time multi-person tracking system that uses a cheap laser scanner instead of cameras. It detects, counts, and tracks multiple people in proximity without any of the privacy concerns or lighting dependencies that come with video.",
     content: [
       {
+        type: "heading",
+        level: 2,
+        text: "Background",
+      },
+      {
         type: "text",
-        content: "Sentinel is a robust security monitoring solution built to handle the demands of modern cloud-native environments. It provides real-time visibility into infrastructure health and security posture.",
+        content: "One of the most important systems in digital out of home signs is the ability to count the number of people who were exposed. Currently, we use cameras at Cineplex Digital Media, however these have many privacy concerns which lead us to use third party services (Quividi) as a legal moat. Being able to count heads without cameras could allow us to not rely on these services.",
+      },
+      {
+        type: "text",
+        content: "LiDAR is an interesting technology because it does not detect identifying features, hence it is far better for privacy concerns. To explore this technology and its viability for people detection, I got my hands on an RPLiDAR A1 and used it to build Sentinel.",
       },
       {
         type: "heading",
         level: 2,
-        text: "System Architecture",
+        text: "Architecture",
       },
       {
         type: "text",
-        content: "Built on a distributed microservices architecture, Sentinel leverages Go for its high-performance processing capabilities and Kubernetes for seamless scalability.",
+        content: "Sentinel has three main parts: the LiDAR sensing perception pipeline, the ML training pipeline, and the web tool for visualization and control. It's a mixed Python/TypeScript workspace: the detection code and model live in Python, and the UI lives in a Next.js app.",
+      },
+      {
+        type: "heading",
+        level: 2,
+        text: "Hardware Setup",
+      },
+      {
+        type: "text",
+        content: "The RPLidar A1 is a cheap 360° laser that connects via USB. It spins 5-10 times per second and measures distances at different angles. The laser can see up to 12 meters away, but the range is limited to 4 meters to focus on nearby people and reduce wall reflections.",
+      },
+      {
+        type: "heading",
+        level: 2,
+        text: "Perception Pipeline",
       },
       {
         type: "image",
-        url: "/projects/sentinel.png",
-        alt: "Sentinel Dashboard",
-        caption: "The Sentinel security dashboard providing real-time threat analysis.",
+        url: "/projects/image-20251218-185416.png",
+        alt: "Perception Pipeline Architecture",
+        width: "80%",
+      },
+      {
+        type: "text",
+        content: "The perception pipeline runs continuously 5-10 times per second. The PersonDetector class wraps the entire pipeline and maintains its state between frames. Each laser scan is converted from polar coordinates to cartesian, then DBSCAN clusters nearby points into objects.",
       },
       {
         type: "heading",
         level: 2,
-        text: "Key Performance Metrics",
+        text: "Feature Extraction & Classification",
       },
       {
-        type: "metrics",
-        items: [
-          { label: "Throughput", value: "50k req/s" },
-          { label: "Latency", value: "< 10ms" },
-          { label: "Uptime", value: "99.99%" },
-        ],
+        type: "text",
+        content: "26 geometric features are extracted from each cluster including size (point count, width, height), shape (aspect ratio, elongation), density, and boundary properties. A Random Forest classifier trained on these features distinguishes people from furniture with ~90% accuracy.",
+      },
+      {
+        type: "text",
+        content: "Random Forest was chosen over neural networks because it's fast on CPU (sub-millisecond inference), handles the feature set well without much tuning, and provides built-in feature importances for debugging.",
+      },
+      {
+        type: "heading",
+        level: 2,
+        text: "Tracking",
+      },
+      {
+        type: "text",
+        content: "Once people are detected, the tracker maintains consistent IDs across frames. It matches new detections to people from the previous frame, marks unmatched people as missing, and removes them after 5 frames (~1 second). New unmatched detections receive new IDs.",
+      },
+      {
+        type: "heading",
+        level: 2,
+        text: "Dashboard",
+      },
+      {
+        type: "image",
+        url: "/projects/image-20251218-184906.png",
+        alt: "Sentinel Dashboard",
+        width: "80%",
+      },
+      {
+        type: "text",
+        content: "The web dashboard provides real-time visualization and debugging. It's built with Flask + Socket.IO on the backend and Next.js on the frontend. The frontend renders a live point cloud visualization with color-coded clusters (green = person, red = not-person) and per-person info cards showing ID, distance, confidence, and point count.",
+      },
+      {
+        type: "image",
+        url: "/projects/image-20251218-184952.png",
+        alt: "Live tracking visualization",
+        width: "80%",
+      },
+      {
+        type: "heading",
+        level: 2,
+        text: "Results and Takeaways",
+      },
+      {
+        type: "text",
+        content: "Geometric features work surprisingly well. Rather than using end-to-end neural networks, 26 carefully designed geometric features successfully distinguish people from furniture with ~90% accuracy. The full pipeline runs at 50-100ms per frame on a laptop CPU, with clustering (DBSCAN) being the bottleneck at ~20ms.",
+      },
+      {
+        type: "heading",
+        level: 2,
+        text: "Limitations and Next Steps",
+      },
+      {
+        type: "text",
+        content: "The system struggles with people partially blocked by furniture, very distant people (low point density), and similar-looking objects like backpacks on chairs. This is a natural limitation of 2D lidar. Future work may experiment with 3D lidar systems and training across frames to detect movement patterns rather than just frame-by-frame classification.",
       },
     ],
   },
