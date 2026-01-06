@@ -29,12 +29,12 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
           </Button>
         </Link>
 
-        <header className="text-center mb-16">
-          <h1 className="text-3xl md:text-4xl font-bold mb-10 tracking-tight text-foreground">
+        <header className="text-center mb-10">
+          <h1 className="text-4xl md:text-5xl font-bold mb-10 tracking-tight text-foreground">
             {project.title}
           </h1>
 
-          <div className="aspect-video relative bg-muted overflow-hidden rounded-2xl mb-16 group shadow-sm border border-black/5">
+          <div className="aspect-video relative bg-muted overflow-hidden rounded-2xl mb-4 group shadow-sm border border-black/5">
             {project.image ? (
               <img
                 src={project.image}
@@ -50,73 +50,51 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
             )}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-12 px-4 max-w-2xl mx-auto">
+          <div className="flex flex-col gap-2 px-0 border-t border-primary/5 pt-5 items-start">
             {/* Date */}
-            <div className="flex items-center gap-4 text-left">
-              <div className="bg-muted p-2.5 rounded-xl shrink-0">
-                <Calendar className="w-4 h-4 text-muted-foreground/70" />
+            <div className="flex items-center gap-4 text-left w-full">
+              <div className="bg-muted p-2 rounded-xl shrink-0">
+                <Calendar className="w-5 h-5 text-muted-foreground/70" />
               </div>
-              <div>
-                <div className="text-[10px] font-bold text-muted-foreground/50 uppercase tracking-[0.15em] mb-0.5">Date</div>
-                <div className="text-sm font-medium text-foreground/80">{project.date}</div>
+              <div className="text-base font-medium text-foreground/80">{project.date}</div>
+            </div>
+
+            {/* technologies */}
+            <div className="flex items-center gap-4 text-left w-full">
+              <div className="bg-muted p-2 rounded-xl shrink-0">
+                <Code className="w-5 h-5 text-muted-foreground/70" />
+              </div>
+              <div className="text-base font-medium text-foreground/80 leading-relaxed">
+                {project.technologies.join(", ")}
               </div>
             </div>
 
             {/* Links */}
-            <div className="flex items-center gap-4 text-left">
-              <div className="bg-muted p-2.5 rounded-xl shrink-0">
-                <ExternalLink className="w-4 h-4 text-muted-foreground/70" />
+            <div className="flex items-center gap-4 text-left w-full">
+              <div className="bg-muted p-2 rounded-xl shrink-0">
+                <ExternalLink className="w-5 h-5 text-muted-foreground/70" />
               </div>
-              <div>
-                <div className="text-[10px] font-bold text-muted-foreground/50 uppercase tracking-[0.15em] mb-0.5">Links</div>
-                <div className="flex flex-wrap gap-x-4">
-                  {project.links?.website && (
-                    <a
-                      href={project.links.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors underline decoration-foreground/10 underline-offset-4"
-                    >
-                      Website
-                    </a>
-                  )}
-                  {project.links?.github && (
-                    <a
-                      href={project.links.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors underline decoration-foreground/10 underline-offset-4"
-                    >
-                      GitHub
-                    </a>
-                  )}
-                </div>
-              </div>
-            </div>
-
-            {/* technologies */}
-            <div className="flex items-center gap-4 text-left">
-              <div className="bg-muted p-2.5 rounded-xl shrink-0">
-                <Code className="w-4 h-4 text-muted-foreground/70" />
-              </div>
-              <div>
-                <div className="text-[10px] font-bold text-muted-foreground/50 uppercase tracking-[0.15em] mb-0.5">Technologies</div>
-                <div className="text-sm font-medium text-foreground/80 leading-relaxed">
-                  {project.technologies.join(", ")}
-                </div>
-              </div>
-            </div>
-
-            {/* description/metrics */}
-            <div className="flex items-center gap-4 text-left">
-              <div className="bg-muted p-2.5 rounded-xl shrink-0">
-                <User className="w-4 h-4 text-muted-foreground/70" />
-              </div>
-              <div>
-                <div className="text-[10px] font-bold text-muted-foreground/50 uppercase tracking-[0.15em] mb-0.5">Status</div>
-                <div className="text-sm font-medium text-foreground/80 leading-relaxed line-clamp-1">
-                  {project.metrics || project.description}
-                </div>
+              <div className="flex flex-wrap gap-x-6">
+                {project.links?.website && (
+                  <a
+                    href={project.links.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-base font-medium text-foreground/80 hover:text-primary transition-colors underline underline-offset-4 decoration-primary/30"
+                  >
+                    Website
+                  </a>
+                )}
+                {project.links?.github && (
+                  <a
+                    href={project.links.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-base font-medium text-foreground/80 hover:text-primary transition-colors underline underline-offset-4 decoration-primary/30"
+                  >
+                    GitHub
+                  </a>
+                )}
               </div>
             </div>
           </div>
