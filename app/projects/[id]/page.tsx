@@ -23,75 +23,104 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
     <div className="min-h-screen">
       <div className="max-w-5xl mx-auto px-6 py-12 md:px-12 md:py-20">
         <Link href="/">
-          <Button variant="ghost" className="mb-8 -ml-4">
+          <Button variant="ghost" className="mb-8 -ml-4 hover:bg-muted/50 transition-colors">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back
           </Button>
         </Link>
 
-        <div className="aspect-video relative bg-muted overflow-hidden rounded-lg mb-8">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-            <span className="text-9xl font-bold text-primary/10">
-              {project.title.charAt(0)}
-            </span>
-          </div>
-        </div>
+        <header className="text-center mb-16">
+          <h1 className="text-4xl md:text-5xl font-bold mb-8 tracking-tight text-foreground">
+            {project.title}
+          </h1>
 
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">{project.title}</h1>
-
-        <div className="flex flex-wrap gap-4 mb-8 text-sm text-muted-foreground">
-          <div className="flex items-center gap-2">
-            <Calendar className="w-4 h-4" />
-            {project.date}
+          <div className="aspect-video relative bg-muted overflow-hidden rounded-xl mb-12 group shadow-sm border border-primary/5">
+            {project.image ? (
+              <img
+                src={project.image}
+                alt={project.title}
+                className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+              />
+            ) : (
+              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/5 to-secondary/5">
+                <span className="text-9xl font-bold text-primary/10">
+                  {project.title.charAt(0)}
+                </span>
+              </div>
+            )}
           </div>
-          {project.metrics && (
-            <div className="flex items-center gap-2">
-              <User className="w-4 h-4" />
-              {project.metrics}
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-12 px-2 md:px-4 max-w-4xl mx-auto">
+            {/* Date */}
+            <div className="flex items-start gap-4 text-left">
+              <div className="bg-muted px-3 py-2.5 rounded-lg border border-primary/5 shrink-0">
+                <Calendar className="w-5 h-5 text-muted-foreground" />
+              </div>
+              <div>
+                <div className="text-xs font-semibold text-muted-foreground/60 uppercase tracking-widest mb-1">Date</div>
+                <div className="text-base font-medium text-foreground/90">{project.date}</div>
+              </div>
             </div>
-          )}
-        </div>
 
-        <div className="flex gap-3 mb-8">
-          {project.links?.website && (
-            <Button asChild>
-              <a
-                href={project.links.website}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <ExternalLink className="mr-2 h-4 w-4" />
-                Website
-              </a>
-            </Button>
-          )}
-          {project.links?.github && (
-            <Button variant="outline" asChild>
-              <a
-                href={project.links.github}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Github className="mr-2 h-4 w-4" />
-                Github
-              </a>
-            </Button>
-          )}
-        </div>
+            {/* Links */}
+            <div className="flex items-start gap-4 text-left">
+              <div className="bg-muted px-3 py-2.5 rounded-lg border border-primary/5 shrink-0">
+                <ExternalLink className="w-5 h-5 text-muted-foreground" />
+              </div>
+              <div>
+                <div className="text-xs font-semibold text-muted-foreground/60 uppercase tracking-widest mb-1">Links</div>
+                <div className="flex flex-wrap gap-x-4">
+                  {project.links?.website && (
+                    <a
+                      href={project.links.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-base font-medium text-foreground/90 hover:text-primary underline underline-offset-4 decoration-primary/30 transition-colors"
+                    >
+                      Website
+                    </a>
+                  )}
+                  {project.links?.github && (
+                    <a
+                      href={project.links.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-base font-medium text-foreground/90 hover:text-primary underline underline-offset-4 decoration-primary/30 transition-colors"
+                    >
+                      GitHub
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
 
-        <div className="mb-8">
-          <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
-            <Code className="w-5 h-5" />
-            Technologies
-          </h2>
-          <div className="flex flex-wrap gap-2">
-            {project.technologies.map((tech) => (
-              <Badge key={tech} variant="secondary">
-                {tech}
-              </Badge>
-            ))}
+            {/* technologies */}
+            <div className="flex items-start gap-4 text-left">
+              <div className="bg-muted px-3 py-2.5 rounded-lg border border-primary/5 shrink-0">
+                <Code className="w-5 h-5 text-muted-foreground" />
+              </div>
+              <div>
+                <div className="text-xs font-semibold text-muted-foreground/60 uppercase tracking-widest mb-1">Technologies</div>
+                <div className="text-base font-medium text-foreground/90 leading-relaxed">
+                  {project.technologies.join(", ")}
+                </div>
+              </div>
+            </div>
+
+            {/* description/metrics */}
+            <div className="flex items-start gap-4 text-left">
+              <div className="bg-muted px-3 py-2.5 rounded-lg border border-primary/5 shrink-0">
+                <User className="w-5 h-5 text-muted-foreground" />
+              </div>
+              <div>
+                <div className="text-xs font-semibold text-muted-foreground/60 uppercase tracking-widest mb-1">Status</div>
+                <div className="text-base font-medium text-foreground/90 leading-relaxed">
+                  {project.metrics || project.description}
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        </header>
 
         <div className="prose prose-neutral dark:prose-invert max-w-none">
           {project.content ? (
