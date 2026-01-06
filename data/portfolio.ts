@@ -26,7 +26,7 @@ export const experiences: Experience[] = [
 
 export const projects: Project[] = [
   {
-    id: "project-1",
+    id: "media-analysis-engine",
     title: "Media Analysis Engine",
     description: "Automated media analysis tool",
     image: "/projects/mediaanalysisengine.png",
@@ -39,7 +39,7 @@ export const projects: Project[] = [
       "A high-performance tool for analyzing media streams and files, providing detailed insights into encoding parameters and quality metrics.",
   },
   {
-    id: "project-2",
+    id: "sentinel",
     title: "Sentinel",
     description: "Real-time security monitoring",
     image: "/projects/sentinel.png",
@@ -50,9 +50,43 @@ export const projects: Project[] = [
     },
     overview:
       "A distributed monitoring system designed for high-availability environments, providing real-time alerts and security analysis.",
+    content: [
+      {
+        type: "text",
+        content: "Sentinel is a robust security monitoring solution built to handle the demands of modern cloud-native environments. It provides real-time visibility into infrastructure health and security posture.",
+      },
+      {
+        type: "heading",
+        level: 2,
+        text: "System Architecture",
+      },
+      {
+        type: "text",
+        content: "Built on a distributed microservices architecture, Sentinel leverages Go for its high-performance processing capabilities and Kubernetes for seamless scalability.",
+      },
+      {
+        type: "image",
+        url: "/projects/sentinel.png",
+        alt: "Sentinel Dashboard",
+        caption: "The Sentinel security dashboard providing real-time threat analysis.",
+      },
+      {
+        type: "heading",
+        level: 2,
+        text: "Key Performance Metrics",
+      },
+      {
+        type: "metrics",
+        items: [
+          { label: "Throughput", value: "50k req/s" },
+          { label: "Latency", value: "< 10ms" },
+          { label: "Uptime", value: "99.99%" },
+        ],
+      },
+    ],
   },
   {
-    id: "project-5",
+    id: "terra",
     title: "Terra",
     description: "Real-time environmental analytics",
     image: "/projects/terra.png",
@@ -67,7 +101,7 @@ export const projects: Project[] = [
       "A comprehensive analytics dashboard that leverages machine learning to provide real-time insights and predictions for environmental metrics.",
   },
   {
-    id: "project-3",
+    id: "notation",
     title: "Notation",
     description: "Interactive musical notation editor",
     image: "/projects/notation.png",
@@ -80,7 +114,7 @@ export const projects: Project[] = [
       "A web-based musical notation editor that allows users to create, play back, and share sheet music in real-time.",
   },
   {
-    id: "project-6",
+    id: "motionwave",
     title: "MotionWave",
     description: "Dynamic gesture-based controller",
     image: "/projects/motionwave.png",
@@ -93,7 +127,7 @@ export const projects: Project[] = [
       "A computer vision system that translates human gestures into control signals for digital interfaces and robotics.",
   },
   {
-    id: "project-4",
+    id: "chordcraft",
     title: "ChordCraft",
     description: "Intelligent musical companion",
     image: "/projects/chordcraft.png",

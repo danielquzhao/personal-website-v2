@@ -94,8 +94,88 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
         </div>
 
         <div className="prose prose-neutral dark:prose-invert max-w-none">
-          <h2>Overview</h2>
-          <p className="text-lg leading-relaxed">{project.overview}</p>
+          {project.content ? (
+            <div className="space-y-12">
+              {project.content.map((block, index) => {
+                switch (block.type) {
+                  case "text":
+                    return (
+                      <p key={index} className="text-lg leading-relaxed">
+                        {block.content}
+                      </p>
+                    );
+                  case "heading":
+                    const levels = {
+                      2: "h2",
+                      3: "h3",
+                      4: "h4",
+                    } as const;
+                    const HeadingTag = levels[block.level as keyof typeof levels];
+                    return <HeadingTag key={index}>{block.text}</HeadingTag>;
+                  case "image":
+                    return (
+                      <figure key={index} className="my-12">
+                        <div className="aspect-video relative bg-muted overflow-hidden rounded-lg">
+                          <img
+                            src={block.url}
+                            alt={block.alt || project.title}
+                            className="object-cover w-full h-full"
+                          />
+                        </div>
+                        {block.caption && (
+                          <figcaption className="mt-4 text-center text-sm text-muted-foreground italic">
+                            {block.caption}
+                          </figcaption>
+                        )}
+                      </figure>
+                    );
+                  case "code":
+                    return (
+                      <div key={index} className="my-8">
+                        {block.fileName && (
+                          <div className="text-xs text-muted-foreground mb-2 font-mono">
+                            {block.fileName}
+                          </div>
+                        )}
+                        <pre className="bg-muted p-6 rounded-lg overflow-x-auto">
+                          <code className={`language-${block.language}`}>
+                            {block.code}
+                          </code>
+                        </pre>
+                      </div>
+                    );
+                  case "metrics":
+                    return (
+                      <div
+                        key={index}
+                        className="grid grid-cols-1 md:grid-cols-3 gap-6 my-12"
+                      >
+                        {block.items.map((item, i) => (
+                          <div
+                            key={i}
+                            className="bg-muted/50 p-6 rounded-xl border border-primary/5"
+                          >
+                            <div className="text-sm text-muted-foreground mb-1">
+                              {item.label}
+                            </div>
+                            <div className="text-2xl font-bold text-primary">
+                              {item.value}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    );
+                  default:
+                    return null;
+                }
+              })}
+            </div>
+          ) : (
+            <>
+              <h2>Overview</h2>
+              <p className="text-lg leading-relaxed">{project.overview}</p>
+            </>
+          )}
         </div>
       </div>
     </div>
