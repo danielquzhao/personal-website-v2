@@ -30,7 +30,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
                 size="icon"
                 className="hover:bg-accent/50 transition-all duration-300 hover:-translate-x-1.5 text-muted-foreground p-0 h-auto w-auto cursor-pointer"
               >
-                <ArrowLeft className="h-6 w-6" />
+                <ArrowLeft className="h-8 w-8" />
               </Button>
             </Link>
           </div>
@@ -131,7 +131,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
                     );
                   case "image":
                     return (
-                      <figure key={index} className="m-0 flex flex-col items-center">
+                      <figure key={index} className="my-0 flex flex-col items-center">
                         <div
                           className="relative flex justify-center overflow-hidden rounded-2xl border border-black/5 shadow-sm"
                           style={block.width ? { maxWidth: block.width } : undefined}

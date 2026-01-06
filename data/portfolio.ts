@@ -30,7 +30,7 @@ export const projects: Project[] = [
     title: "A2D Media Analysis Engine",
     description: "AI-powered video and image analysis pipeline",
     image: "/projects/mediaanalysisengine.png",
-    date: "December 2024",
+    date: "November 2025",
     technologies: ["Python", "PyTorch", "Next.js", "Google Gemini API", "Segment Anything Model"],
     links: {
       github: "https://github.com/danielquzhao/a2d-media-analysis-engine",
