@@ -52,33 +52,6 @@ export const projects: Project[] = [
       "A distributed monitoring system designed for high-availability environments, providing real-time alerts and security analysis.",
   },
   {
-    id: "project-3",
-    title: "Notation",
-    description: "Interactive musical notation editor",
-    image: "/projects/notation.png",
-    date: "October 2024",
-    technologies: ["TypeScript", "React", "WebAudio API"],
-    links: {
-      github: "https://github.com/danielquzhao",
-    },
-    overview:
-      "A web-based musical notation editor that allows users to create, play back, and share sheet music in real-time.",
-  },
-  {
-    id: "project-4",
-    title: "ChordCraft",
-    description: "Intelligent musical companion",
-    image: "/projects/chordcraft.png",
-    date: "August 2024",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
-    links: {
-      github: "https://github.com/danielquzhao",
-    },
-    metrics: "Featured on Product Hunt",
-    overview:
-      "An AI-powered music platform that helps musicians discover chords, practice scales, and compose music with ease.",
-  },
-  {
     id: "project-5",
     title: "Terra",
     description: "Real-time environmental analytics",
@@ -94,6 +67,19 @@ export const projects: Project[] = [
       "A comprehensive analytics dashboard that leverages machine learning to provide real-time insights and predictions for environmental metrics.",
   },
   {
+    id: "project-3",
+    title: "Notation",
+    description: "Interactive musical notation editor",
+    image: "/projects/notation.png",
+    date: "October 2024",
+    technologies: ["TypeScript", "React", "WebAudio API"],
+    links: {
+      github: "https://github.com/danielquzhao",
+    },
+    overview:
+      "A web-based musical notation editor that allows users to create, play back, and share sheet music in real-time.",
+  },
+  {
     id: "project-6",
     title: "MotionWave",
     description: "Dynamic gesture-based controller",
@@ -105,6 +91,20 @@ export const projects: Project[] = [
     },
     overview:
       "A computer vision system that translates human gestures into control signals for digital interfaces and robotics.",
+  },
+  {
+    id: "project-4",
+    title: "ChordCraft",
+    description: "Intelligent musical companion",
+    image: "/projects/chordcraft.png",
+    date: "August 2024",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+    links: {
+      github: "https://github.com/danielquzhao",
+    },
+    metrics: "Featured on Product Hunt",
+    overview:
+      "An AI-powered music platform that helps musicians discover chords, practice scales, and compose music with ease.",
   },
 ];
 
