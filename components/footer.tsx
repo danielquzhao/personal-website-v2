@@ -39,6 +39,36 @@ export function Footer() {
             <link.icon className="w-6 h-6" />
           </a>
         ))}
+        
+        {/* CS Webring Widget */}
+        <a 
+          href="https://cs.uwatering.com/#https://www.danielquzhao.com?nav=prev"
+          className="text-muted-foreground hover:text-foreground transition-colors"
+          aria-label="Previous site in CS Webring"
+        >
+          ←
+        </a>
+        <a 
+          href="https://cs.uwatering.com/#https://www.danielquzhao.com" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          aria-label="CS Webring"
+          className="text-muted-foreground hover:text-foreground transition-colors"
+        >
+          <img 
+            src="https://cs.uwatering.com/icon.white.svg" 
+            alt="CS Webring" 
+            className="w-6 h-6"
+            style={{ opacity: 0.8 }}
+          />
+        </a>
+        <a 
+          href="https://cs.uwatering.com/#https://www.danielquzhao.com?nav=next"
+          className="text-muted-foreground hover:text-foreground transition-colors"
+          aria-label="Next site in CS Webring"
+        >
+          →
+        </a>
       </div>
     </footer>
   );
