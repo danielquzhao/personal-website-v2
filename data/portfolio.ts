@@ -36,44 +36,124 @@ export const projects: Project[] = [
       github: "https://github.com/danielquzhao/a2d-media-analysis-engine",
     },
     overview:
-      "Can we automate media tagging? I built a pipeline that combines Gemini 2.5 Flash for scene understanding with Meta's SAM 3 for pixel-perfect object tracking, turning videos into structured JSON reports with temporal segments and bounding boxes.",
+      "The A2D Media Analysis Engine is a CLI tool that decomposes media files into a structured JSON report containing temporal segments, object bounding boxes, and visual feature metrics. It combines multimodal LLMs with pixel-perfect object tracking to automate media tagging.",
     content: [
       {
+        type: "heading",
+        level: 2,
+        text: "Background",
+      },
+      {
         type: "text",
-        content: "Manual tagging is slow and boring. I wanted to build a machine that could watch a video and tell me not just what's in it, but where things are, when scenes change, and how it looks—automatically.",
+        content: "We started with a simple but ambitious question: Can we automate our current media label tagging system? Manual tagging is slow and boring. We wanted to build a machine that could watch a video and tell us not just what is in it, but where it is, when scenes change, and how it looks.",
+      },
+      {
+        type: "text",
+        content: "The goal was to build a pipeline that combines two things: High-Level Semantic Understanding (using Google's Gemini 2.5 Flash) and Pixel-Perfect Object Tracking (using Meta's SAM 3).",
       },
       {
         type: "heading",
         level: 2,
-        text: "The Problem",
+        text: "Architecture",
       },
       {
         type: "text",
-        content: "Detecting hard cuts is easy, but soft cuts—dissolves, wipes, rapid pans—are notoriously difficult for traditional computer vision. I tried PySceneDetect and various heuristics, but they struggled with false positives. The solution? Throw the problem at an LLM. Gemini 2.5 Flash identifies semantic cuts that pixel-based methods miss.",
-      },
-      {
-        type: "heading",
-        level: 2,
-        text: "Zero-Shot Object Tracking",
-      },
-      {
-        type: "text",
-        content: "Finding arbitrary objects without pre-training presents a classic dilemma: Speed, Effectiveness, or Zero-Shot—pick two. YOLO is fast but limited to pre-trained classes. Grounding DINO has great zero-shot capabilities but is too slow for video. SAM 3's release changed everything—it natively supports text prompts for video tracking. The challenge? It's heavy. I implemented a chunking strategy: split segments into 30-frame batches, run inference, stream results, clear VRAM, repeat.",
+        content: "The system architecture is composed of five key components: Shot Detection, Object Detection, Semantic Analysis, Visual Features, and the Web Visualization Tool.",
       },
       {
         type: "image",
-        url: "/projects/mediaanalysisengine.png",
-        alt: "Media Analysis Engine UI",
-        caption: "Web visualizer with synced playback, real-time bounding boxes, and timeline exploration.",
+        url: "/projects/image-20251219-150246.png",
+        alt: "System Architecture",
       },
       {
         type: "heading",
         level: 2,
-        text: "What I Learned",
+        text: "Shot Detection",
+      },
+      {
+        type: "image",
+        url: "/projects/image-20251219-145902.png",
+        alt: "Shot Detection Visualization",
       },
       {
         type: "text",
-        content: "LLMs are surprisingly good shot detectors—Gemini identifies logical scene breaks that align with human intuition. Hybrid pipelines work: combining the broad knowledge of an LLM with the specialized vision of SAM creates something greater than the sum of its parts. I built a Next.js visualizer for debugging because JSON files don't help when you need to see bounding boxes moving in real-time.",
+        content: "Early experiments with standard approaches like global luminance changes or PySceneDetect struggled with soft cuts. The most effective solution was using Gemini 2.5 Flash to identify frame indices where distinct visual cuts occur, catching semantic cuts that pixel-based methods might miss.",
+      },
+      {
+        type: "heading",
+        level: 2,
+        text: "Object Detection",
+      },
+      {
+        type: "image",
+        url: "/projects/image-20251219-151839.png",
+        alt: "Object Detection & Tracking",
+      },
+      {
+        type: "text",
+        content: "I used SAM 3 for zero-shot tracking. It natively supports text prompts (e.g., 'face', 'product', 'logo') to detect and track objects through time. To handle VRAM constraints, I implemented a 'chunking' strategy, processing segments in batches of 30 frames.",
+      },
+      {
+        type: "heading",
+        level: 2,
+        text: "Semantic Analysis & Visual Features",
+      },
+      {
+        type: "text",
+        content: "I used Gemini to classify attributes like Camera Shot (Close up, Wide), Setting (Indoor, Office), and Ad Attributes. Low-level visual signals like color palette (K-Means), brightness, contrast, and motion energy were computed using OpenCV and Scikit-learn.",
+      },
+      {
+        type: "image",
+        url: "/projects/image-removebg-preview.png",
+        alt: "Visual Features Overview",
+      },
+      {
+        type: "heading",
+        level: 2,
+        text: "Web Visualization Tool",
+      },
+      {
+        type: "image",
+        url: "/projects/image-20251219-152804.png",
+        alt: "Web Visualizer UI",
+      },
+      {
+        type: "text",
+        content: "JSON files are hard for humans to parse. I built a Next.js visualizer that serves as the 'player' for my data, syncing SVG bounding boxes with video playback and visualizing feature intensity on a scrubbable timeline.",
+      },
+      {
+        type: "image",
+        url: "/projects/image-20251219-153139.png",
+        alt: "Timeline Exploration",
+      },
+      {
+        type: "heading",
+        level: 2,
+        text: "The CLI",
+      },
+      {
+        type: "image",
+        url: "/projects/image.png",
+        alt: "CLI Tool Output",
+      },
+      {
+        type: "code",
+        language: "bash",
+        fileName: "Usage Examples",
+        code: "python src/pipeline.py --input assets/video.mp4 --output output/report.json\n\npython src/pipeline.py \\\n  --input assets/video.mp4 \\\n  --prompt \"red car\" --prompt \"driver\" \\\n  --camera-shot-label \"drone shot\" \\\n  --setting-label \"highway\"",
+      },
+      {
+        type: "heading",
+        level: 2,
+        text: "Results & Limitations",
+      },
+      {
+        type: "text",
+        content: "LLMs are surprisingly good shot detectors, often identifying logical scene breaks that align with human intuition. Hybrid pipelines combining broad LLM knowledge with specialized vision models like SAM work exceptionally well.",
+      },
+      {
+        type: "text",
+        content: "Future steps include investigating local LLM alternatives to reduce cloud costs, wrapping the orchestrator in a REST API, and optimizing the architecture for long-form video processing.",
       },
     ],
   },

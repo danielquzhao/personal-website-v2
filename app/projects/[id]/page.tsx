@@ -39,17 +39,17 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
 
       <div className="max-w-4xl mx-auto px-6 py-12 md:px-12 md:py-20">
         <div className="flex items-center justify-center mb-6">
-          <h1 className="text-2xl md:text-3xl font-semibold tracking-tight text-foreground text-center">
+          <h1 className="text-xl md:text-2xl font-medium tracking-tight text-foreground text-center">
             {project.title}
           </h1>
         </div>
 
-        <div className="aspect-video relative bg-muted overflow-hidden rounded-2xl mb-4 group shadow-sm border border-black/5">
+        <div className="relative overflow-hidden rounded-2xl mb-0 group shadow-sm border border-black/5 bg-muted/10 flex justify-center">
           {project.image ? (
             <img
               src={project.image}
               alt={project.title}
-              className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+              className="w-full h-auto max-h-[450px] object-contain transition-transform duration-500 group-hover:scale-105"
             />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/5 to-secondary/5">
@@ -60,9 +60,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
           )}
         </div>
 
-        <div className="flex flex-col gap-2 px-0 border-t border-primary/5 pt-5 items-start">
+        <div className="flex flex-col gap-4 px-0 border-t border-primary/5 pt-5 mb-8 items-start">
           {/* Date */}
-          <div className="flex items-center gap-4 text-left w-full">
+          <div className="flex items-center gap-4 text-left w-full m-0">
             <div className="bg-muted p-2 rounded-xl shrink-0">
               <Calendar className="w-5 h-5 text-muted-foreground/70" />
             </div>
@@ -70,7 +70,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
           </div>
 
           {/* technologies */}
-          <div className="flex items-center gap-4 text-left w-full">
+          <div className="flex items-center gap-4 text-left w-full m-0">
             <div className="bg-muted p-2 rounded-xl shrink-0">
               <Code className="w-5 h-5 text-muted-foreground/70" />
             </div>
@@ -80,7 +80,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
           </div>
 
           {/* Links */}
-          <div className="flex items-center gap-4 text-left w-full">
+          <div className="flex items-center gap-4 text-left w-full m-0">
             <div className="bg-muted p-2 rounded-xl shrink-0">
               <ExternalLink className="w-5 h-5 text-muted-foreground/70" />
             </div>
@@ -111,35 +111,36 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
 
         <div className="prose prose-neutral dark:prose-invert max-w-none">
           {project.content ? (
-            <div className="space-y-12">
+            <div className="space-y-0">
               {project.content.map((block, index) => {
                 switch (block.type) {
+                  case "heading":
+                    const headingStyles = {
+                      2: "text-lg font-medium m-0 text-foreground",
+                      3: "text-base font-medium m-0 text-foreground",
+                      4: "text-base font-medium m-0 text-foreground",
+                    };
+                    if (block.level === 2) return <h2 key={index} className={headingStyles[2]}>{block.text}</h2>;
+                    if (block.level === 3) return <h3 key={index} className={headingStyles[3]}>{block.text}</h3>;
+                    return <h4 key={index} className={headingStyles[4]}>{block.text}</h4>;
                   case "text":
                     return (
-                      <p key={index} className="text-lg leading-relaxed">
+                      <p key={index} className="text-base text-muted-foreground leading-relaxed m-0">
                         {block.content}
                       </p>
                     );
-                  case "heading":
-                    const levels = {
-                      2: "h2",
-                      3: "h3",
-                      4: "h4",
-                    } as const;
-                    const HeadingTag = levels[block.level as keyof typeof levels];
-                    return <HeadingTag key={index}>{block.text}</HeadingTag>;
                   case "image":
                     return (
-                      <figure key={index} className="my-12">
-                        <div className="aspect-video relative bg-muted overflow-hidden rounded-lg">
+                      <figure key={index} className="m-0">
+                        <div className="relative overflow-hidden rounded-2xl border border-black/5 shadow-sm bg-muted/10 flex justify-center">
                           <img
                             src={block.url}
                             alt={block.alt || project.title}
-                            className="object-cover w-full h-full"
+                            className="w-full h-auto max-h-[450px] object-contain block transition-transform duration-500 hover:scale-[1.02]"
                           />
                         </div>
                         {block.caption && (
-                          <figcaption className="mt-4 text-center text-sm text-muted-foreground italic">
+                          <figcaption className="mt-2 text-center text-sm text-muted-foreground italic m-0">
                             {block.caption}
                           </figcaption>
                         )}
@@ -188,8 +189,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
             </div>
           ) : (
             <>
-              <h2>Overview</h2>
-              <p className="text-lg leading-relaxed">{project.overview}</p>
+              <h2 className="text-lg font-medium mt-6 mb-2 text-foreground">Overview</h2>
+              <p className="text-base text-muted-foreground leading-relaxed">{project.overview}</p>
             </>
           )}
         </div>
