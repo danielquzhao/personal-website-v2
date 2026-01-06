@@ -39,7 +39,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
 
       <div className="max-w-4xl mx-auto px-6 py-12 md:px-12 md:py-20">
         <div className="flex items-center justify-center mb-6">
-          <h1 className="text-xl md:text-2xl font-medium tracking-tight text-foreground text-center">
+          <h1 className="text-3xl font-semibold tracking-tight text-foreground text-center">
             {project.title}
           </h1>
         </div>
