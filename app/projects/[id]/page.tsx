@@ -21,16 +21,24 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
 
   return (
     <div className="min-h-screen">
-      <div className="max-w-4xl mx-auto px-6 py-12 md:px-12 md:py-20">
-        <div className="relative flex items-center justify-center mb-10">
-          <div className="absolute left-0">
+      <div className="fixed top-12 md:top-[5.2rem] left-0 right-0 z-50 pointer-events-none flex justify-center">
+        <div className="max-w-4xl w-full px-6 md:px-12 relative flex items-center">
+          <div className="absolute left-6 md:left-0 top-1.5 pointer-events-auto">
             <Link href="/">
-              <Button variant="ghost" className="-ml-4 hover:bg-muted/50 transition-colors text-muted-foreground">
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                Back
+              <Button
+                variant="ghost"
+                size="icon"
+                className="hover:bg-accent/50 transition-all duration-300 hover:-translate-x-1.5 text-muted-foreground p-0 h-auto w-auto cursor-pointer"
+              >
+                <ArrowLeft className="h-6 w-6" />
               </Button>
             </Link>
           </div>
+        </div>
+      </div>
+
+      <div className="max-w-4xl mx-auto px-6 py-12 md:px-12 md:py-20">
+        <div className="flex items-center justify-center mb-6">
           <h1 className="text-2xl md:text-3xl font-semibold tracking-tight text-foreground text-center">
             {project.title}
           </h1>
