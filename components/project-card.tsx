@@ -13,10 +13,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
   const externalLink = project.links?.website || project.links?.dorahacks;
 
   return (
-    <div className="group space-y-3">
+    <div className="space-y-3">
       {/* Image Link */}
-      <Link href={`/projects/${project.id}`} className="block">
-        <div className="relative overflow-hidden rounded-lg aspect-[16/10] bg-gradient-to-br from-primary/20 to-secondary/20 group-hover:scale-[1.02] transition-all duration-300">
+      <Link href={`/projects/${project.id}`} className="block group/image">
+        <div className="relative overflow-hidden rounded-lg aspect-[16/10] bg-gradient-to-br from-primary/20 to-secondary/20 hover:scale-[1.02] transition-all duration-300">
           {project.image ? (
             <Image
               src={project.image}
@@ -38,8 +38,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
       {/* Text content block */}
       <div className="space-y-1">
         <div className="flex items-center justify-between">
-          <Link href={`/projects/${project.id}`} className="block">
-            <h3 className="text-lg font-semibold group-hover:text-primary transition-colors">
+          <Link href={`/projects/${project.id}`} className="block group/title">
+            <h3 className="text-lg font-semibold group-hover/title:text-primary transition-colors">
               {project.title}
             </h3>
           </Link>
