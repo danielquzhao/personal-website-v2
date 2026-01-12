@@ -575,6 +575,7 @@ export const projects: Project[] = [
     technologies: ["React", "Node.js", "Express", "MongoDB", "ABCJS"],
     links: {
       github: "https://github.com/danielquzhao/chordcraft",
+      website: "https://chordcraft.onrender.com/",
     },
     overview:
       "A modern CRUD web application that transforms piano performances into beautiful sheet music in real-time. Play notes on the virtual keyboard and watch as they instantly convert to professional notation.",
