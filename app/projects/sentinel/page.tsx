@@ -18,7 +18,7 @@ export default function SentinelPage() {
                     <section className="space-y-4">
                         <h2 className="text-xl font-medium text-foreground">Background</h2>
                         <p className="text-base text-muted-foreground leading-relaxed">
-                            One of the most important systems in digital out of home signs is the ability to count the number of people who were exposed. Currently, we use cameras at Cineplex Digital Media, however these have many privacy concerns which lead us to use third party services (Quividi) as a legal moat. Being able to count heads without cameras could allow us to not rely on these services.
+                            During my internship at Cineplex Digital Media, I was exposed to the challenges of digital out of home signs. One of the most important systems in digital out of home signs is the ability to count the number of people who were exposed. Currently, we use cameras, however these have many privacy concerns which lead us to use third party services (Quividi) as a legal moat. Being able to count heads without cameras could allow us to not rely on these services.
                         </p>
                         <p className="text-base text-muted-foreground leading-relaxed">
                             LiDAR is an interesting technology because it does not detect identifying features, hence it is far better for privacy concerns. To explore this technology and its viability for people detection, I got my hands on an RPLiDAR A1 and used it to build Sentinel.

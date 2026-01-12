@@ -75,13 +75,13 @@ export default function TerraPage() {
                         <h2 className="text-xl font-medium text-foreground">Credits</h2>
                         <div className="text-base text-muted-foreground leading-relaxed">
                             This project was built for UofTHacks 2025 by:
-                            <ul className="list-disc list-inside">
+                            <ul className="list-disc list-inside marker:text-muted-foreground">
                                 <li>
                                     <a
                                         href="https://yuyeon.netlify.app/"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="hover:underline text-foreground transition-colors"
+                                        className="hover:underline text-muted-foreground transition-colors"
                                     >
                                         Yuyeon Kim
                                     </a>
@@ -91,7 +91,7 @@ export default function TerraPage() {
                                         href="https://www.chinglamlau.ca/"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="hover:underline text-foreground transition-colors"
+                                        className="hover:underline text-muted-foreground transition-colors"
                                     >
                                         Ching Lam Lau
                                     </a>
@@ -101,7 +101,7 @@ export default function TerraPage() {
                                         href="https://www.danielquzhao.com/"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="hover:underline text-foreground transition-colors"
+                                        className="hover:underline text-muted-foreground transition-colors"
                                     >
                                         Daniel Zhao
                                     </a>
