@@ -25,9 +25,23 @@ export default function ChordCraftPage() {
                         <p className="text-base text-muted-foreground leading-relaxed">
                             ChordCraft features an interactive virtual piano that maps 17 keys to your computer keyboard, including support for chords via a 200ms debounce system. As you play, the app provides real-time sound playback and visual highlights while instantly converting your input into ABC notation.
                         </p>
+                        <figure className="relative flex justify-center overflow-hidden border border-black/5 shadow-sm my-1 max-w-[85%] mx-auto">
+                            <img
+                                src="/projects/image-20260112-033518.png"
+                                alt="ChordCraft Dashboard Visualization"
+                                className="w-full h-auto max-h-[500px] object-contain block transition-transform duration-500 hover:scale-[1.02]"
+                            />
+                        </figure>
                         <p className="text-base text-muted-foreground leading-relaxed">
                             ABCJS is used to render dynamic sheet music as you play, with measures, clefs, and key signatures. The system also includes full CRUD operations for saving and organizing compositions, protected by user authentication.
                         </p>
+                        <figure className="relative flex justify-center overflow-hidden border border-black/5 shadow-sm my-1 max-w-[85%] mx-auto">
+                            <img
+                                src="/projects/image-20260112-033602.png"
+                                alt="ChordCraft Saved Compositions"
+                                className="w-full h-auto max-h-[500px] object-contain block transition-transform duration-500 hover:scale-[1.02]"
+                            />
+                        </figure>
 
                         <h2 className="text-xl font-medium text-foreground">Backend Architecture</h2>
                         <p className="text-base text-muted-foreground leading-relaxed">
