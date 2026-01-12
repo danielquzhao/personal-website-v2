@@ -32,7 +32,9 @@ export const projects: Project[] = [
     image: "/projects/mediaanalysisengine.png",
     date: "December 2025",
     technologies: ["Python", "PyTorch", "Next.js", "Google Gemini API", "Segment Anything Model"],
-    links: {},
+    links: {
+      cdm: "https://www.cdmexperiences.com/",
+    },
     overview:
       "The A2D Media Analysis Engine is a CLI tool that decomposes media files into a structured JSON report containing temporal segments, object bounding boxes, and visual feature metrics. It combines multimodal LLMs with pixel-perfect object tracking to automate media tagging.",
     content: [
@@ -165,7 +167,9 @@ export const projects: Project[] = [
     image: "/projects/sentinel.png",
     date: "October 2025",
     technologies: ["Python", "Scikit-learn", "Next.js", "Flask", "Socket.IO"],
-    links: {},
+    links: {
+      cdm: "https://www.cdmexperiences.com/",
+    },
     overview:
       "Sentinel is a real-time multi-person tracking system that uses a cheap laser scanner instead of cameras. It detects, counts, and tracks multiple people in proximity without any of the privacy concerns or lighting dependencies that come with video.",
     content: [

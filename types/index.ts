@@ -24,6 +24,7 @@ export interface Project {
     website?: string;
     github?: string;
     dorahacks?: string;
+    cdm?: string;
   };
   metrics?: string;
   overview?: string;

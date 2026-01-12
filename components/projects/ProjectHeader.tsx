@@ -69,12 +69,25 @@ export function ProjectHeader({ project }: ProjectHeaderProps) {
                     </div>
 
                     {/* Links */}
-                    {(project.links?.website || project.links?.github || project.links?.dorahacks) && (
+                    {(project.links?.website || project.links?.github || project.links?.dorahacks || project.links?.cdm) && (
                         <div className="flex items-center gap-4 text-left w-full m-0">
                             <div className="bg-muted p-2 rounded-xl shrink-0">
                                 <ExternalLink className="w-5 h-5 text-muted-foreground/70" />
                             </div>
                             <div className="flex flex-wrap gap-x-2">
+                                {project.links?.cdm && (
+                                    <div className="flex items-baseline gap-x-0.5">
+                                        <a
+                                            href={project.links.cdm}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-base font-medium text-foreground/80 hover:text-primary transition-colors underline underline-offset-4 decoration-primary/30"
+                                        >
+                                            Cineplex
+                                        </a>
+                                        {(project.links.website || project.links.github || project.links.dorahacks) && <span className="text-foreground/80 font-medium">,</span>}
+                                    </div>
+                                )}
                                 {project.links?.website && (
                                     <div className="flex items-baseline gap-x-0.5">
                                         <a
