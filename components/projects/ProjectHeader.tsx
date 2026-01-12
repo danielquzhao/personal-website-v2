@@ -26,7 +26,7 @@ export function ProjectHeader({ project }: ProjectHeaderProps) {
                 </div>
             </div>
 
-            <div className="max-w-4xl mx-auto px-6 py-12 md:px-12 md:pt-20 md:pb-8">
+            <div className="max-w-4xl mx-auto px-6 pt-12 pb-4 md:px-12 md:pt-20 md:pb-6">
                 <div className="flex items-center justify-center mb-6">
                     <h1 className="text-3xl font-semibold tracking-tight text-foreground text-center">
                         {project.title}
