@@ -18,37 +18,29 @@ export default function MotionWavePage() {
                     <section className="space-y-4">
                         <h2 className="text-xl font-medium text-foreground">Overview</h2>
                         <p className="text-base text-muted-foreground leading-relaxed">
-                            We wanted to create a musical instrument that anyone could play, regardless of musical background. MotionWave uses your webcam to track your hands: move your dominant hand up and down to control pitch, and use your other hand to adjust volume. A neural network generates 4-part vocal harmony to accompany your melody in real time.
+                            We wanted to create a musical instrument that anyone could play, regardless of musical background. MotionWave uses your webcam to track your hands: move your dominant hand up and down to control pitch, and use your other hand to adjust volume. A 4-part harmony is generated to accompany your melody in real time.
                         </p>
 
-                        <h2 className="text-xl font-medium text-foreground">Key Features</h2>
+                        <h2 className="text-xl font-medium text-foreground">Technical Details</h2>
                         <p className="text-base text-muted-foreground leading-relaxed">
-                            The app uses MediaPipe's low-latency hand tracking for consistent gesture detection. An AI-powered neural network generates real-time 4-part SATB (Soprano, Alto, Tenor, Bass) harmony. For sound output, we built a custom Web Audio API-based vocal synthesis engine with formant filtering.
+                            We built the project using Next.js, TypeScript, and Tailwind CSS. The app uses MediaPipe for accurate hand tracking. Then, using the location of your hands, the app controls sound output.
                         </p>
 
-                        <h2 className="text-xl font-medium text-foreground">AI Harmony Generation</h2>
                         <p className="text-base text-muted-foreground leading-relaxed">
-                            The harmony generation runs in a Web Worker to keep the UI at 60 FPS. When you play a melody note, the worker receives the MIDI pitch and the trained neural network predicts appropriate soprano, alto, tenor, and bass notes that harmonize with your input.
+                            An AI-powered neural network generates real-time 4-part SATB (Soprano, Alto, Tenor, Bass) harmony. This runs in a Web Worker to keep the UI at 60 FPS. When you play a melody note, the worker receives the MIDI pitch and the trained neural network predicts appropriate soprano, alto, tenor, and bass notes that harmonize with your input.
                         </p>
+                        <figure className="relative flex justify-center overflow-hidden border border-black/5 shadow-sm my-1 max-w-[85%] mx-auto">
+                            <img
+                                src="/projects/image-20260112-031146.png"
+                                alt="MotionWave Landmark Visualization"
+                                className="w-full h-auto max-h-[500px] object-contain block transition-transform duration-500 hover:scale-[1.02]"
+                            />
+                        </figure>
+
                         <p className="text-base text-muted-foreground leading-relaxed">
-                            The model is served as WebAssembly for fast inference (harmonizermodule.wasm), with pre-trained weights loaded from harmonizerweights.bin. This keeps latency under 20ms for real-time responsiveness.
+                            The model is served as WebAssembly for fast inference (harmonizermodule.wasm), with pre-trained weights loaded from harmonizerweights.bin. This helps keep latency under 20ms for real-time responsiveness.
                         </p>
 
-                        <h2 className="text-xl font-medium text-foreground">Hand Tracking Integration</h2>
-                        <p className="text-base text-muted-foreground leading-relaxed">
-                            I used MediaPipe Hands for robust, low-latency tracking. The app supports both left and right-handed users—you choose your dominant hand at startup. Your dominant hand's vertical position maps to pitch (higher = higher note), while your non-dominant hand controls volume.
-                        </p>
-                        <p className="text-base text-muted-foreground leading-relaxed">
-                            Hand landmarks are visualized in real-time on the canvas, providing immediate visual feedback. The system maintains 60 FPS by offloading harmony generation to a separate thread.
-                        </p>
-
-                        <h2 className="text-xl font-medium text-foreground">Frontend</h2>
-                        <p className="text-base text-muted-foreground leading-relaxed">
-                            Built with Next.js 15 and React 19, MotionWave uses the App Router for modern routing. TypeScript ensures type safety across the complex audio and ML logic. The harmonizer hook (useHarmonizer) manages the Web Worker lifecycle and message passing between the main thread and the harmony generation worker.
-                        </p>
-                        <p className="text-base text-muted-foreground leading-relaxed">
-                            I styled the app with Tailwind CSS 4 to create a vintage, premium aesthetic with a beige background and vinyl record animations. The rotating record effect uses CSS animations optimized for smooth 60 FPS performance.
-                        </p>
                         <h2 className="text-xl font-medium text-foreground">Credits</h2>
                         <div className="text-base text-muted-foreground leading-relaxed">
                             This project was built for TechTO 2025 by:
