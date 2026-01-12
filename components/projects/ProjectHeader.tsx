@@ -12,7 +12,7 @@ export function ProjectHeader({ project }: ProjectHeaderProps) {
         <div className="min-h-fit">
             <div className="fixed top-12 md:top-[5.2rem] left-0 right-0 z-50 pointer-events-none flex justify-center">
                 <div className="max-w-4xl w-full px-6 md:px-12 relative flex items-center">
-                    <div className="absolute left-6 md:left-0 top-1.5 pointer-events-auto">
+                    <div className="absolute left-6 md:left-0 top-1.5 pointer-events-auto hidden md:block">
                         <Link href="/">
                             <Button
                                 variant="ghost"
