@@ -64,14 +64,6 @@ export default function TerraPage() {
                             Our placement system handles two scenarios: placing blocks on AR-detected planes (ground, tables, walls) and stacking blocks on top of existing blocks. When you tap, the system first raycasts against existing blocks to enable stacking, then falls back to AR plane detection for new structures. We also added block customization with three color options (blue, red, green), accessible through the UI buttons.
                         </p>
 
-                        <h2 className="text-xl font-medium text-foreground">AR Foundation Integration</h2>
-                        <p className="text-base text-muted-foreground leading-relaxed">
-                            We leveraged Unity's AR Foundation framework with the ARCore XR Plugin for Android devices. The ARRaycastManager component handles plane detection and hit testing, allowing seamless interaction between virtual blocks and the physical environment.
-                        </p>
-                        <p className="text-base text-muted-foreground leading-relaxed">
-                            We used Unity ProBuilder for creating the Lego-style block models, providing clean geometry optimized for mobile AR performance.
-                        </p>
-
                         <h2 className="text-xl font-medium text-foreground">Credits</h2>
                         <div className="text-base text-muted-foreground leading-relaxed">
                             This project was built for UofTHacks 2025 by:
