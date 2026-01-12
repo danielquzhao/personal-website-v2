@@ -18,37 +18,12 @@ export default function MotionWavePage() {
                     <section className="space-y-4">
                         <h2 className="text-xl font-medium text-foreground">Overview</h2>
                         <p className="text-base text-muted-foreground leading-relaxed">
-                            I wanted to create a musical instrument that anyone could play, regardless of musical background. MotionWave uses your webcam to track your hands: move your dominant hand up and down to control pitch, and use your other hand to adjust volume. The magic happens when a neural network generates 4-part vocal harmony in real-time.
+                            We wanted to create a musical instrument that anyone could play, regardless of musical background. MotionWave uses your webcam to track your hands: move your dominant hand up and down to control pitch, and use your other hand to adjust volume. A neural network generates 4-part vocal harmony to accompany your melody in real time.
                         </p>
 
                         <h2 className="text-xl font-medium text-foreground">Key Features</h2>
                         <p className="text-base text-muted-foreground leading-relaxed">
-                            The app uses MediaPipe's low-latency hand tracking for consistent gesture detection. An AI-powered neural network generates real-time 4-part SATB (Soprano, Alto, Tenor, Bass) harmony. I built a custom Web Audio API-based vocal synthesis engine with formant filtering for rich, vocal-like sound. The interface features a rotating vinyl record aesthetic with real-time hand landmark visualization and wave-based feedback.
-                        </p>
-
-                        <h2 className="text-xl font-medium text-foreground">Vocal Audio Engine</h2>
-                        <p className="text-base text-muted-foreground leading-relaxed">
-                            I designed a custom audio engine that synthesizes 4 simultaneous voices. Each voice uses two detuned oscillators (sawtooth + triangle) for richness, then passes through a bandpass filter tuned to different formant frequencies depending on voice type: 1200Hz for soprano, 900Hz for alto, 650Hz for tenor, and 400Hz for bass.
-                        </p>
-                        <div className="my-6">
-                            <pre className="bg-muted p-4 rounded-lg overflow-x-auto">
-                                <code className="language-typescript">
-                                    {`private setupVocalFilter(voiceType: string): void {
-  let filterFreq: number;
-  switch (voiceType) {
-    case 'soprano': filterFreq = 1200; break;
-    case 'alto': filterFreq = 900; break;
-    case 'tenor': filterFreq = 650; break;
-    case 'bass': filterFreq = 400; break;
-  }
-  this.filterNode.type = 'bandpass';
-  this.filterNode.frequency.setValueAtTime(filterFreq, ...);
-}`}
-                                </code>
-                            </pre>
-                        </div>
-                        <p className="text-base text-muted-foreground leading-relaxed">
-                            Each voice gets an ADSR envelope with a quick 50ms attack and smooth 100ms release to avoid clicks. All four voices play simultaneously with equal volume, blending into a cohesive chord.
+                            The app uses MediaPipe's low-latency hand tracking for consistent gesture detection. An AI-powered neural network generates real-time 4-part SATB (Soprano, Alto, Tenor, Bass) harmony. For sound output, we built a custom Web Audio API-based vocal synthesis engine with formant filtering.
                         </p>
 
                         <h2 className="text-xl font-medium text-foreground">AI Harmony Generation</h2>
@@ -67,18 +42,39 @@ export default function MotionWavePage() {
                             Hand landmarks are visualized in real-time on the canvas, providing immediate visual feedback. The system maintains 60 FPS by offloading harmony generation to a separate thread.
                         </p>
 
-                        <h2 className="text-xl font-medium text-foreground">Technical Architecture</h2>
+                        <h2 className="text-xl font-medium text-foreground">Frontend</h2>
                         <p className="text-base text-muted-foreground leading-relaxed">
                             Built with Next.js 15 and React 19, MotionWave uses the App Router for modern routing. TypeScript ensures type safety across the complex audio and ML logic. The harmonizer hook (useHarmonizer) manages the Web Worker lifecycle and message passing between the main thread and the harmony generation worker.
                         </p>
                         <p className="text-base text-muted-foreground leading-relaxed">
                             I styled the app with Tailwind CSS 4 to create a vintage, premium aesthetic with a beige background and vinyl record animations. The rotating record effect uses CSS animations optimized for smooth 60 FPS performance.
                         </p>
-
-                        <h2 className="text-xl font-medium text-foreground">Design Goals</h2>
-                        <p className="text-base text-muted-foreground leading-relaxed">
-                            I wanted MotionWave to feel magical—like you're conducting an invisible choir. The combination of gesture control, AI harmony, and vocal synthesis creates an expressive instrument that's accessible to anyone with a webcam. No musical training required.
-                        </p>
+                        <h2 className="text-xl font-medium text-foreground">Credits</h2>
+                        <div className="text-base text-muted-foreground leading-relaxed">
+                            This project was built for TechTO 2025 by:
+                            <ul className="list-disc list-inside marker:text-muted-foreground">
+                                <li>
+                                    <a
+                                        href="https://www.antran.dev/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="hover:underline text-muted-foreground transition-colors"
+                                    >
+                                        An Tran
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://www.danielquzhao.com/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="hover:underline text-muted-foreground transition-colors"
+                                    >
+                                        Daniel Zhao
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </section>
                 </div>
             </article>

@@ -475,6 +475,7 @@ export const projects: Project[] = [
     technologies: ["Next.js", "TypeScript", "MediaPipe", "Web Audio API", "Web Workers"],
     links: {
       github: "https://github.com/danielquzhao/motionwave",
+      website: "https://techto25.vercel.app/",
     },
     overview:
       "Control the rhythm with your hands. MotionWave is a gesture-based musical instrument that uses MediaPipe hand tracking for pitch control and a neural network for real-time 4-part SATB harmony generation.",
