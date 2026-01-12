@@ -23,8 +23,24 @@ export default function TerraPage() {
 
                         <h2 className="text-xl font-medium text-foreground">Key Features</h2>
                         <p className="text-base text-muted-foreground leading-relaxed">
-                            We built Terra to let users create buildings and landscapes tied to real-world GPS locations. We designed an intuitive interface where you simply pull out your phone to add blocks in 3D space. You can view your buildings from any angle and experience life-sized models seamlessly integrated into your environment.
+                            We designed an intuitive interface where you simply click on your phone screen to add blocks in 3D space. You can view your buildings from any angle and experience life-sized models seamlessly integrated into your environment.
                         </p>
+                        <div className="flex gap-4 mb-16 max-w-2xl mx-auto justify-center h-[350px]">
+                            <figure className="relative flex justify-center overflow-hidden border border-black/5 shadow-sm h-full shrink-0">
+                                <img
+                                    src="/projects/image-20260112-015810.png"
+                                    alt="Terra AR Gameplay 2"
+                                    className="h-full w-auto object-contain block transition-transform duration-500 hover:scale-[1.02]"
+                                />
+                            </figure>
+                            <figure className="relative flex justify-center overflow-hidden border border-black/5 shadow-sm h-full shrink-0">
+                                <img
+                                    src="/projects/image-20260112-015711.png"
+                                    alt="Terra AR Gameplay 1"
+                                    className="h-full w-auto object-contain block transition-transform duration-500 hover:scale-[1.02]"
+                                />
+                            </figure>
+                        </div>
 
                         <h2 className="text-xl font-medium text-foreground">Technical Implementation</h2>
                         <p className="text-base text-muted-foreground leading-relaxed">
