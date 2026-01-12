@@ -9,7 +9,7 @@ export function Hero() {
       <h1 className="text-3xl md:text-4xl font-semibold mb-4">Daniel Zhao</h1>
       <div className="text-base text-muted-foreground mb-8 max-w-2xl">
         <p className="mb-4">
-          I study Computer Science at the University of Waterloo. Previously, I was a software developer at Cineplex Digital Media.
+          I study Computer Science at the University of Waterloo. Previously, I was a software developer at CDM.
         </p>
         <p>
           I am passionate about interactive systems, human-centered design, and technology that brings experiences to life. In my free time, I enjoy running, climbing, and creating music.

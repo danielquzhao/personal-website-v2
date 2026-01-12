@@ -18,7 +18,7 @@ export default function MediaAnalysisEnginePage() {
                     <section className="space-y-4">
                         <h2 className="text-xl font-medium text-foreground">Background</h2>
                         <p className="text-base text-muted-foreground leading-relaxed">
-                            During my internship at Cineplex Digital Media, we had a simple but ambitious question: Can we automate our current media label tagging system? At that point, the team was doing manual content tagging on the advertisements that we received, in order to try and understand relationships between engagement and ad content. 
+                            During my internship at CDM, we had a simple but ambitious question: Can we automate our current media label tagging system? At that point, the team was doing manual content tagging on the advertisements that we received, in order to try and understand relationships between engagement and ad content.
                         </p>
                         <p className="text-base text-muted-foreground leading-relaxed">
                             However, manual tagging is slow and boring. Hence, the goal of this project was to build a pipeline that can perform the same task automatically.

@@ -2,7 +2,7 @@ import { Experience, Project } from "@/types";
 
 export const experiences: Experience[] = [
   {
-    company: "Cineplex Digital Media",
+    company: "CDM",
     role: "Software Developer",
     icon: "/logos/cineplex.png",
     color: "#004ccd",
@@ -45,7 +45,7 @@ export const projects: Project[] = [
       },
       {
         type: "text",
-        content: "During my internship at Cineplex Digital Media, we had a simple but ambitious question: Can we automate our current media label tagging system? Manual tagging is slow and boring. We wanted to build a machine that could watch a video and tell us not just what is in it, but where it is, when scenes change, and how it looks.",
+        content: "During my internship at CDM, we had a simple but ambitious question: Can we automate our current media label tagging system? Manual tagging is slow and boring. We wanted to build a machine that could watch a video and tell us not just what is in it, but where it is, when scenes change, and how it looks.",
       },
       {
         type: "text",
@@ -180,7 +180,7 @@ export const projects: Project[] = [
       },
       {
         type: "text",
-        content: "One of the most important systems in digital out of home signs is the ability to count the number of people who were exposed. Currently, we use cameras at Cineplex Digital Media, however these have many privacy concerns which lead us to use third party services (Quividi) as a legal moat. Being able to count heads without cameras could allow us to not rely on these services.",
+        content: "One of the most important systems in digital out of home signs is the ability to count the number of people who were exposed. Currently, we use cameras at CDM, however these have many privacy concerns which lead us to use third party services (Quividi) as a legal moat. Being able to count heads without cameras could allow us to not rely on these services.",
       },
       {
         type: "text",
