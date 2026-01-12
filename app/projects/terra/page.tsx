@@ -16,7 +16,7 @@ export default function TerraPage() {
             <article className="max-w-4xl mx-auto px-6 py-0 md:px-12">
                 <div className="prose prose-neutral dark:prose-invert max-w-none">
                     <section className="space-y-4">
-                        <h2 className="text-xl font-medium text-foreground">Background</h2>
+                        <h2 className="text-xl font-medium text-foreground">Overview</h2>
                         <p className="text-base text-muted-foreground leading-relaxed">
                             In this project we wanted to change the way people see the world by combining augmented reality with creative building mechanics. Our vision was simple: let anyone build structures in real world spaces using just their phone.
                         </p>

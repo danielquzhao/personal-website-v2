@@ -374,6 +374,7 @@ export const projects: Project[] = [
     technologies: ["Ruby on Rails", "React", "TypeScript", "Gemini API", "KaTeX"],
     links: {
       github: "https://github.com/danielquzhao/notation",
+      website: "https://mathtolatex.com/",
     },
     overview:
       "A modern web application for converting PDFs and images into LaTeX—the industry standard for mathematical and technical documents. Built with a Ruby on Rails backend and a React (Vite) frontend, powered by Google's Gemini API.",
