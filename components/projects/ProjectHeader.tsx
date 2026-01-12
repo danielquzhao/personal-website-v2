@@ -83,7 +83,7 @@ export function ProjectHeader({ project }: ProjectHeaderProps) {
                                             rel="noopener noreferrer"
                                             className="text-base font-medium text-foreground/80 hover:text-primary transition-colors underline underline-offset-4 decoration-primary/30"
                                         >
-                                            Cineplex
+                                            CDM
                                         </a>
                                         {(project.links.website || project.links.github || project.links.dorahacks) && <span className="text-foreground/80 font-medium">,</span>}
                                     </div>
