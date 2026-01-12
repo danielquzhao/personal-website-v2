@@ -106,7 +106,7 @@ python src/pipeline.py \\
 
                         <h2 className="text-xl font-medium text-foreground">Results & Takeaways</h2>
                         <p className="text-base text-muted-foreground leading-relaxed">
-                            This project was a lot of fun to work on and I learned a lot about applied AI and the media industry. It was cool to brainstorm different solutions to try and tackle a problem affecting the team, and I am glad that the solution ended up working well!
+                            This project was a lot of fun to work on and I learned a lot about applied AI and the media industry. It was cool to brainstorm different solutions to try and tackle a problem affecting the team, and I am glad that the project ended up working well!
                         </p>
                     </section>
                 </div>
