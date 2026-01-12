@@ -18,68 +18,76 @@ export default function ChordCraftPage() {
                     <section className="space-y-4">
                         <h2 className="text-xl font-medium text-foreground">Overview</h2>
                         <p className="text-base text-muted-foreground leading-relaxed">
-                            I built ChordCraft to solve a simple problem: capturing musical ideas before they disappear. The app features a virtual keyboard that responds to keypresses with sound, and instantly converts your playing into ABC notation that renders as professional sheet music. Everything you create is saved to MongoDB and tied to your account with JWT authentication.
+                            We built ChordCraft to allow users to capture their musical ideas before they disappear. The app features a virtual keyboard that responds to keypresses with sound, and instantly converts your playing into ABC notation that renders as sheet music. Everything you create is saved to MongoDB and tied to your account with user authentication.
                         </p>
 
                         <h2 className="text-xl font-medium text-foreground">Key Features</h2>
                         <p className="text-base text-muted-foreground leading-relaxed">
-                            ChordCraft offers an interactive virtual piano that responds to keyboard input with realistic sound playback. Real-time notation converts key presses into ABC notation instantly, with dynamic sheet music rendering as you play. The composition management system lets you save, title, and organize your musical creations with full CRUD operations. JWT-based authentication protects your work with secure password hashing via bcrypt.
-                        </p>
-
-                        <h2 className="text-xl font-medium text-foreground">The Keyboard Experience</h2>
-                        <p className="text-base text-muted-foreground leading-relaxed">
-                            The virtual keyboard maps 17 piano keys to your computer keyboard (A-P and semicolon). Each key is mapped to a specific note in ABC notation, with support for both white and black keys (sharps). When you press a key, the app plays the corresponding audio sample and highlights the key visually.
+                            ChordCraft features an interactive virtual piano that maps 17 keys to your computer keyboard, including support for chords via a 200ms debounce system. As you play, the app provides real-time sound playback and visual highlights while instantly converting your input into ABC notation.
                         </p>
                         <p className="text-base text-muted-foreground leading-relaxed">
-                            I implemented a 200ms debounce system that groups simultaneous key presses into chords. Hold multiple keys and release them together to create a chord, which gets formatted as [C E G] in ABC notation. The system automatically adds bar lines after every 4 beats to create proper musical measures.
+                            ABCJS is used to render dynamic sheet music as you play, with measures, clefs, and key signatures. The system also includes full CRUD operations for saving and organizing compositions, protected by user authentication.
                         </p>
-
-                        <h2 className="text-xl font-medium text-foreground">Real-time Sheet Music Rendering</h2>
-                        <p className="text-base text-muted-foreground leading-relaxed">
-                            I used ABCJS to render sheet music dynamically. As you play, the notation updates in real-time with professional formatting: 4 measures per line, proper spacing, and time signatures. The ABC notation format is converted to a full musical staff with clefs, key signatures, and measure boxes.
-                        </p>
-                        <div className="my-6">
-                            <pre className="bg-muted p-4 rounded-lg overflow-x-auto">
-                                <code className="language-javascript">
-                                    {`const abcString = \`X:1\nM:4/4\nL:1/4\nK:C\n\${abcNotation}\`;
-
-ABCJS.renderAbc("sheet-music", abcString, {
-  responsive: 'resize',
-  wrap: { preferredMeasuresPerLine: 4 },
-  staffwidth: 800
-});`}
-                                </code>
-                            </pre>
-                        </div>
 
                         <h2 className="text-xl font-medium text-foreground">Backend Architecture</h2>
                         <p className="text-base text-muted-foreground leading-relaxed">
-                            The backend is a RESTful API built with Node.js and Express. I used MongoDB with Mongoose for flexible schema design. The Music model stores notation, title, description, and timestamps, with each piece linked to a user via userId reference.
+                            The backend was built with Node.js and Express, utilizing MongoDB with Mongoose for flexible schema design. We implemented full CRUD functionality to manage musical compositions, where pieces are stored with their notation, titles, and descriptions. Each entry is linked to a specific user via userId reference to ensure data integrity and privacy.
                         </p>
                         <p className="text-base text-muted-foreground leading-relaxed">
-                            Authentication is handled with JWT tokens. When users sign in, they receive a token that's validated on protected routes. The protect middleware verifies tokens and attaches user info to requests, ensuring users can only access and modify their own compositions.
+                            Authentication is handled with JWT tokens validated through custom protect middleware. This middleware verifies tokens and attaches user information to incoming requests. The frontend communicates with this API via Axios, with comprehensive error handling and loading states managed through React state for a responsive user experience.
                         </p>
 
-                        <h2 className="text-xl font-medium text-foreground">CRUD Operations</h2>
+                        <h2 className="text-xl font-medium text-foreground">Frontend</h2>
                         <p className="text-base text-muted-foreground leading-relaxed">
-                            ChordCraft implements full CRUD functionality for musical compositions. Users can create new pieces by playing on the keyboard and saving with a title and description. The saved compositions page displays all your work, sorted by creation date. You can edit titles and descriptions, or delete pieces you no longer want.
-                        </p>
-                        <p className="text-base text-muted-foreground leading-relaxed">
-                            All database operations include authorization checks to ensure users can only interact with their own data. The frontend uses Axios to communicate with the API, with error handling and loading states managed through React state.
+                            We built the frontend with React and Vite. The keyboard component tracks active keys, held keys, and the current ABC notation string. The AuthContext provides global authentication state, making it easy to check if a user is logged in and protect routes. Toast notifications give feedback for save operations, errors, and authentication events.
                         </p>
 
-                        <h2 className="text-xl font-medium text-foreground">Frontend State Management</h2>
-                        <p className="text-base text-muted-foreground leading-relaxed">
-                            I built the frontend with React and Vite for fast hot module replacement. The keyboard component tracks active keys, held keys (to prevent key repeat), and the current ABC notation string. React Router handles navigation between the home page, keyboard, and saved compositions.
-                        </p>
-                        <p className="text-base text-muted-foreground leading-relaxed">
-                            The AuthContext provides global authentication state, making it easy to check if a user is logged in and protect routes. Toast notifications give immediate feedback for save operations, errors, and authentication events.
-                        </p>
-
-                        <h2 className="text-xl font-medium text-foreground">Design Philosophy</h2>
-                        <p className="text-base text-muted-foreground leading-relaxed">
-                            I wanted ChordCraft to be the lightweight assistant for composers and students—fast, simple, and focused. No complex DAW features, just a quick way to draft melodies and turn them into readable sheet music. The interface is clean with a piano graphic and floating musical notes to set the mood.
-                        </p>
+                        <h2 className="text-xl font-medium text-foreground">Credits</h2>
+                        <div className="text-base text-muted-foreground leading-relaxed">
+                            This project was built for GeeseHacks 2025 by:
+                            <ul className="list-disc list-inside marker:text-muted-foreground">
+                                <li>
+                                    <a
+                                        href="https://www.linkedin.com/in/robloxian/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="hover:underline text-muted-foreground transition-colors"
+                                    >
+                                        Ivy Cho
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://www.linkedin.com/in/henry-hung-360857197/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="hover:underline text-muted-foreground transition-colors"
+                                    >
+                                        Henry Hung
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://www.linkedin.com/in/ryan-xiaoo/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="hover:underline text-muted-foreground transition-colors"
+                                    >
+                                        Ryan Xiao
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://www.danielquzhao.com/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="hover:underline text-muted-foreground transition-colors"
+                                    >
+                                        Daniel Zhao
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </section>
                 </div>
             </article>
