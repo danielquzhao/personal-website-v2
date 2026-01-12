@@ -52,7 +52,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground transition-all duration-200 hover:scale-110"
               >
-                <Github className="w-4 h-4" />
+                <Github className="w-5 h-5" />
               </a>
             )}
             {externalLink && (
@@ -62,7 +62,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground transition-all duration-200 hover:scale-110"
               >
-                <ExternalLink className="w-4 h-4" />
+                <ExternalLink className="w-5 h-5" />
               </a>
             )}
           </div>
