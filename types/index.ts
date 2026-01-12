@@ -23,6 +23,7 @@ export interface Project {
   links?: {
     website?: string;
     github?: string;
+    dorahacks?: string;
   };
   metrics?: string;
   overview?: string;

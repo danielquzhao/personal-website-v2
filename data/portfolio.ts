@@ -291,6 +291,7 @@ export const projects: Project[] = [
     technologies: ["Unity", "C#", "ARCore", "AR Foundation", "ProBuilder"],
     links: {
       github: "https://github.com/danielquzhao/terra",
+      dorahacks: "https://dorahacks.io/buidl/21685",
     },
     overview:
       "Terra is an augmented reality game where your imagination shapes reality through creating buildings and landscapes in real-world locations. We made the outside world more fun by letting players place, rotate, and stack Lego-style blocks with intuitive touch controls.",

@@ -18,7 +18,7 @@ export default function TerraPage() {
                     <section className="space-y-4">
                         <h2 className="text-xl font-medium text-foreground">Overview</h2>
                         <p className="text-base text-muted-foreground leading-relaxed">
-                            We wanted to change the way people see the world by combining augmented reality with creative building mechanics. Our vision was simple: let anyone create structures tied to real-world locations, visible to anyone who visits that spot with the app.
+                            In this project we wanted to change the way people see the world by combining augmented reality with creative building mechanics. Our vision was simple: let anyone build structures in real world spaces using just their phone.
                         </p>
 
                         <h2 className="text-xl font-medium text-foreground">Key Features</h2>

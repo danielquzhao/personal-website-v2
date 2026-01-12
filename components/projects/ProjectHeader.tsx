@@ -73,25 +73,41 @@ export function ProjectHeader({ project }: ProjectHeaderProps) {
                         <div className="bg-muted p-2 rounded-xl shrink-0">
                             <ExternalLink className="w-5 h-5 text-muted-foreground/70" />
                         </div>
-                        <div className="flex flex-wrap gap-x-6">
+                        <div className="flex flex-wrap gap-x-2">
                             {project.links?.website && (
-                                <a
-                                    href={project.links.website}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-base font-medium text-foreground/80 hover:text-primary transition-colors underline underline-offset-4 decoration-primary/30"
-                                >
-                                    Website
-                                </a>
+                                <div className="flex items-baseline gap-x-0.5">
+                                    <a
+                                        href={project.links.website}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-base font-medium text-foreground/80 hover:text-primary transition-colors underline underline-offset-4 decoration-primary/30"
+                                    >
+                                        Website
+                                    </a>
+                                    {(project.links.github || project.links.dorahacks) && <span className="text-foreground/80 font-medium">,</span>}
+                                </div>
                             )}
                             {project.links?.github && (
+                                <div className="flex items-baseline gap-x-0.5">
+                                    <a
+                                        href={project.links.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-base font-medium text-foreground/80 hover:text-primary transition-colors underline underline-offset-4 decoration-primary/30"
+                                    >
+                                        GitHub
+                                    </a>
+                                    {project.links.dorahacks && <span className="text-foreground/80 font-medium">,</span>}
+                                </div>
+                            )}
+                            {project.links?.dorahacks && (
                                 <a
-                                    href={project.links.github}
+                                    href={project.links.dorahacks}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-base font-medium text-foreground/80 hover:text-primary transition-colors underline underline-offset-4 decoration-primary/30"
                                 >
-                                    GitHub
+                                    DoraHacks
                                 </a>
                             )}
                         </div>
