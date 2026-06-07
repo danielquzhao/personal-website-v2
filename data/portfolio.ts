@@ -4,8 +4,8 @@ export const experiences: Experience[] = [
   {
     company: "Faire",
     role: "Software Engineering Intern",
-    icon: "/logos/faire.svg",
-    color: "#000000",
+    icon: "/logos/faire.png",
+    color: "#333333",
     link: "https://www.faire.com/",
   },
   {
