@@ -3,14 +3,14 @@ import { Experience, Project } from "@/types";
 export const experiences: Experience[] = [
   {
     company: "Faire",
-    role: "Software Engineering Intern",
+    role: "Software Engineer Intern",
     icon: "/logos/faire.png",
     color: "#333333",
     link: "https://www.faire.com/",
   },
   {
     company: "Cineplex Digital Media",
-    role: "Software Developer",
+    role: "Software Engineer Intern",
     icon: "/logos/cineplex.png",
     color: "#004ccd",
     link: "https://www.cdmexperiences.com/",
