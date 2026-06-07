@@ -51,7 +51,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground transition-all duration-200 hover:scale-110"
-                title="CDM"
+                title="Cineplex Digital Media"
               >
                 <div className="w-[1.8rem] h-[1.8rem] flex items-center justify-center">
                   <svg
