@@ -32,7 +32,7 @@ export function Hero() {
                     alt={`${exp.company} logo`}
                     width={48}
                     height={48}
-                    className={`object-contain ${exp.company === "Faire" ? "w-[2.3rem] h-[2.3rem]" : "w-8 h-8"}`}
+                    className={`object-contain ${exp.company === "Faire" ? "w-[1.5rem] h-[1.5rem]" : "w-8 h-8"}`}
                   />
                 ) : (
                   <span className="text-2xl font-bold text-white">
