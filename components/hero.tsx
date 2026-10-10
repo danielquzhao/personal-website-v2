@@ -1,6 +1,4 @@
 import { experiences } from "@/data/portfolio";
-import { Badge } from "@/components/ui/badge";
-import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 export function Hero() {
@@ -65,15 +63,6 @@ export function Hero() {
         })}
       </div>
 
-      <a
-        href="/resume.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 text-base font-medium hover:gap-3 transition-all"
-      >
-        Click here for resume
-        <ArrowRight className="w-4 h-4" />
-      </a>
     </section>
   );
 }
